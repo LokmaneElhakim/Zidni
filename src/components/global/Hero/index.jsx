@@ -7,7 +7,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="h-[90dvh] relative z-10 overflow-hidden mt-20 pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+        className="h-[90dvh] relative z-10 overflow-hidden pb-16 pt-[10dvh] dark:bg-gray-dark md:pb-[120px] xl:pb-[160px]2xl:pb-[200px]"
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
@@ -19,7 +19,7 @@ const Hero = () => {
                   <br className="sm:hidden m-0" /> minds
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg">
-                  Explore dynamic e-learning with Zidni. Engage with interactive
+                  Explore dynamic e learning with Zidni. Engage with interactive
                   content and quizzes.
                   <br /> Join us to revolutionize education together!
                 </p>

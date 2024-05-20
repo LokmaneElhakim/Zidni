@@ -97,10 +97,13 @@ const Visualisation = ({ courses, index }) => {
     <div className="min-h-[85dvh] max-h-[83dvh] border-2 rounded-sm m-0 p-0 dark:bg-background overflow-y-scroll">
       <div className={"flex-col justify-center items-center sm:flex"}>
         <Card className="m-4">
-          <CardHeader>
+          <CardHeader className="mb-0">
             <CardTitle>
               {filteredChapter[0]?.chapterId}. {filteredChapter[0]?.title}
             </CardTitle>
+            <CardDescription>
+              {filteredChapter[0]?.chapterDescription}
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div key={filteredChapter[0]?.chapterId}>

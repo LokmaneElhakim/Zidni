@@ -1,16 +1,14 @@
 import VisualisationComponent from "../components/global/Visualisation/index";
 import * as storageUnits from "./visualisation/sfsd/storageUnits.json";
-import File from "./visualisation/sfsd/File.jsx";
 import * as creatingDanceTable from "./visualisation/sfsd/CreatingIndexTable.json";
 import * as RepresentationsOfMultiValued from "./visualisation/sfsd/RepresentationsOfMultiValued.json";
 import * as blockCirculation from "./visualisation/sfsd/blockCirculation.json";
 import * as recordTypes from "./visualisation/sfsd/recordTypes.json";
 import { Fragment } from "react";
-import * as ReturnToZero from "../data/visualisation/sfsd/Return To Zero.json"
-import * as NoReturnToZero from "../data/visualisation/sfsd/No Return To Zero.json"
-import * as PhaseEncoding from "../data/visualisation/sfsd/Phase Encoding.json"
-import * as NRZBloque from "../data/visualisation/sfsd/FNRZ Non-Bloqué.json"
-import { title } from "process";
+import * as ReturnToZero from "../data/visualisation/sfsd/Return To Zero.json";
+import * as NoReturnToZero from "../data/visualisation/sfsd/No Return To Zero.json";
+import * as PhaseEncoding from "../data/visualisation/sfsd/Phase Encoding.json";
+import * as NRZBloque from "../data/visualisation/sfsd/FNRZ Non-Bloqué.json";
 
 export const courses = [
   {
@@ -772,548 +770,589 @@ export const courses = [
         ],
       },
 
-        // TODO Oussama
-            {
-              chapterId: 2,
-              title: "Media concepts",
-              chapterDescription:
-               "The central memory of the computer is a volatile memory, that is to say that its contents are erased when the power supply to the computer is interrupted. However, the programs and data stored in central memory and primarily the system code and data operating conditions need to be preserved beyond this cutoff. The commonly used solution to deal with this problem consists of storing the data on non-volatile mass media, such as such as the hard disk, the floppy disk, the CD-ROM or even the magnetic tape, in units called files.",
-              
-               subChapter: [
-                {
-                  id: 221,
-                  title: "1) Introduction",
-                  subChapterContent: (
-                    <p>
-                      The central memory of the computer is a volatile memory, that is to say that its contents are erased
-                      when the power supply to the computer is interrupted. However, the programs and
-                      data stored in central memory and primarily the system code and data
-                      operating conditions need to be preserved beyond this cutoff. The commonly used solution
-                      to deal with this problem consists of storing the data on non-volatile mass media, such as
-                      such as the hard disk, the floppy disk, the CD-ROM or even the magnetic tape, in units called
-                      files.
-                      <br />{" "}
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter
-                },
-                {
-                  id: 222,
-                  title: "2) Primary Memory vs. Secondary Memory",
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>A. Volatility:</strong>
-                      </h4>{" "}
-                      RAM: RAM has a limited capacity, usually measured in GB. The average RAM capacity in personal computers generally ranges from 4 GB to 32 GB or more, depending on the needs and type of computer.
-                      RAM is much faster than secondary memory. 
-                      It is designed for quick access to data currently in use.
-                      <br />
-                      <h4>
-                        <strong>B. Capacity:</strong>
-                      </h4>{" "}
-                      - RAM: RAM is volatile memory, which means that the data it contains is
-                      temporary and are erased when the computer is turned off or restarted. She serves
-                      primarily to store data in use by the processor and programs
-                      running.<br />
-                      - Secondary memory: Secondary memory is non-volatile, which means that the data
-                      stored there remain intact even when the computer is turned off. This is the place where are
-                      stored long-term data, such as files and programs.
-                      <br />
-                      <h4>
-                        <strong>C. Secondary memory:</strong>
-                      </h4>{" "}
-                      Secondary memory has a much larger capacity than RAM, 
-                      ranging from 128 GB to several TB for common hard drives. 
-                      It is used to store large amounts of data permanently.
-                      <br />
-                      <h4>
-                      <strong>D. Access Speed:</strong>
-                      </h4>{" "}
-                      - RAM: RAM offers very fast access to data, measured in nanoseconds (ns), which allows the processor almost instantaneous access to data.
-                      -Secondary memory: Secondary memory is slower than RAM in terms of data access, with access times measured in milliseconds (ms) for hard drives.
-                      Data stored in secondary memory needs some time to be transferred to RAM before being accessible to the processor.
-                      <br />
-                      <h4>
-                      <strong>E. Cost:</strong>
-                      </h4>{" "}
-                      - RAM: RAM is more expensive per unit of storage than secondary memory. 
-                      The cost of RAM varies depending on capacity, speed, and type of RAM (DDR3, DDR4, DDR5, etc.).
-                      - Secondary memory: Secondary memory is generally cheaper in terms of cost per GB than RAM, making it a more economical way to store large amounts of data permanently.
-                      <br />
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter
-                },
-                {
-                  id: 223,
-                  title: "3) Magnetic storage media",
-                  subChapterContent: (
-                    <p>
-                      The recording on a magnetic medium, whether it's tape or disk, 
-                      relies on the same principle: the magnetization of a surface covered with a magnetizable substance.
-                    </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter
-                },
-                {
-                  // TO DO Bouhamza
-                  id: 224,
-                  title: "4) Principle of magnetic recording",
-                  subChapterContent: (
-                    <p>
-                    ....
-                    </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter
-                },
-                {
-                  // TO DO Bouhamza
-                  id: 225,
-                  title: "5) Recording density",
-                  subChapterContent: (
-                    <p>
-                    ....
-                    </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter
-                },
-                {
-                  id: 226,
-                  title: "6) Recording modes",
-                  subChapterContent: (
-                    <p>
-                     <h4>
-                        <strong>6.1.RZ mode (Return to Zero) :</strong>
-                      </h4>{" "}
-                      In this mode, each data bit (1 or 0) is represented by a magnetic transition (a direction of magnetization). 
-                      The bits are separated by a neutral value (non-magnetized zone). 
-                      It is this absence of magnetization that corresponds to zero.
-                      <br />
-                    </p>
-                  ),
-                  subChapterVisualisation: (
-                    <VisualisationComponent
-                      animationData={ReturnToZero}
-                      title={"Return To Zero"}
-                      description={``}
-                    />
-                  ),
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                     <h4>
-                        <strong>6.2.NRZ mode (Non Return to Zero) :</strong>
-                      </h4>{" "}
-                      Unlike the RZ mode, the NRZ (Non Return to Zero) mode does not require a return to zero after each bit.
-                      In NRZ mode, the magnetic state remains constant throughout the duration of a sequence of
-                      equal bits, whether they are 1s or 0s, which means there is no magnetic transition in the middle. 
-                      Another magnetic state is generated only if there is a transition from 1 to 0 or from 0 to 1.
-                      <br />
-                    </p>
-                  ),
-                  subChapterVisualisation: (
-                    <VisualisationComponent
-                      animationData={NoReturnToZero}
-                      title={"Non Return To Zero"}
-                      description={``}
-                    />
-                  ),
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                     <h4>
-                        <strong>6.3.PE mode (Phase Encoding) :</strong>
-                      </h4>{" "}
-                      In this mode, each data bit is represented by two small magnets. 
-                      In between, there is a transition. 
-                      If this transition is positive, we have a 1, if it is negative, we have a 0.
-                      <br />
-                    </p>
-                  ),
-                  subChapterVisualisation: (
-                    <VisualisationComponent
-                      animationData={PhaseEncoding}
-                      title={"Phase Encoding"}
-                      description={``}
-                    />
-                  ),
-                },
-                {
-                  id: 227,
-                  title: "7) Recording Formats",
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                      <strong>7.1.1.Recording format in NRZ mode:</strong>
-                      </h4>{" "}
-                      In this mode, control characters are added to the physical block. 
-                      This integration aims to allow control mechanisms to verify the integrity of data, 
-                      whether during writing or reading. The main control characters used 
-                      for this purpose are the CRC (Cyclic Redundancy Check) and the LRC (Longitudinal Redundancy Check). 
-                      The reading process of a block starts at the first byte identified after a GAP and continues until the
-                      next GAP is detected. During reading, only the actual data (logical records) 
-                      are transferred to the main memory. Control characters are not transmitted.
-                      <h4>
-                        <strong>A-Unblocked recording (F=1):</strong>
-                      </h4>
-                      In this case, the number of control characters (CRC and LRC) is equal to the number of logical records, 
-                      since each block contains only one logical record, resulting in a significant loss of storage space.
-                    </p>
-                  ),
-                  subChapterVisualisation: (
-                    <VisualisationComponent
-                      animationData={NRZBloque}
-                      title={"Recording format in NRZ mode:"}
-                      description={``}
-                    />
-                  ),
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>B-Blocked recording (F &gt; 1):</strong>
-                      </h4>
-                      In this case, the number of control characters (CRC and LRC) is equal to the number of logical records, 
-                      since each block contains only one logical record, resulting in a significant loss of storage space.
-                    </p>
-                  ),
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                      <strong>7.1.2.Recording format in PE mode:</strong>
-                      </h4>{" "}
-                      In this mode, 41 characters, called synchronization characters, 
-                      are inserted before and after the useful data. 
-                      The reading process of a block begins with the first record following the 41 synchronization characters and continues until the next 41 
-                      characters are identified.<h4>
-                      <strong>A-Unblocked recording (F=1):</strong>
-                      </h4>
-                      Each logical record begins and ends with 41 synchronization characters.
-                      <br />
-                    </p>
-                  ),
-      
-                  // to DO Visualisation To BE Continued
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>B-Blocked recording (F &gt; 1):</strong>
-                      </h4>
-                      Each physical block (containing several logical records) begins and ends with 41 synchronization characters.
-                      <br />
-                    </p>
-                  ),
-      
-                  // TO Do Visualisation To Be Continued
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>7.2.Characteristics of a magnetic tape:</strong>
-                      </h4>{" "}
-                      The main characteristics of a magnetic tape are as follows:
-                      <br />
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter            
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>A.Storage capacity:</strong>
-                      </h4>{" "}
-                      <br />
-                      The storage capacity of a magnetic tape is generally expressed in terabytes (TB) or gigabytes (GB), 
-                      depending on the technology and recording density. Modern magnetic tapes can offer capacities ranging from a few tens of GB 
-                      to several TB per cartridge.
-                      <br />
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter            
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>B.Recording density:</strong>
-                      </h4>{" "}
-                      <br />
-                      Recording density indicates the number of bits recorded per unit length, 
-                      generally expressed in bpi (bits per inch). 
-                      A higher recording density allows more data to be stored on the same length
-                      of tape. The recording density of magnetic tapes is constantly increasing 
-                      and can vary depending on the technology, format, and manufacturer. 
-                      However, modern magnetic tapes typically offer high recording densities, ranging from 6,000 to 50,000 bpi.
-                      <br />
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter            
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>C.Tape width:</strong>
-                      </h4>{" "}
-                      <br />
-                      The tape width is the physical width of the magnetic tape. It can vary
-                      depending on the technology and application, ranging from a few
-                       millimeters to several inches.
-                      <br />
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter            
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>D.Tape width:</strong>
-                      </h4>{" "}
-                      <br />
-                      Tape length: The tape length determines the total storage capacity
-                      of a tape cartridge. Magnetic tapes can vary in length, 
-                      ranging from a few meters to several tens of meters.
-                      <br />
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter            
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>E.Lifespan and reliability:</strong>
-                      </h4>{" "}
-                      <br />
-                      Magnetic tapes are generally designed to have a long lifespan 
-                      and good reliability for long-term data preservation. 
-                      A high-quality magnetic tape can last for several decades.
-                      <br />
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter            
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>F.Types of tapes:</strong>
-                      </h4>{" "}
-                      <br />
-                      There are different types of magnetic tapes, including backup 
-                      tapes, data storage tapes, tapes for audio/video production, etc.
-                      <br />
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter            
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>F.Sequential access:</strong>
-                      </h4>{" "}
-                      <br />
-                      Sequential access mode is the most common for magnetic tapes. 
-                      Data is stored linearly on the tape, and to access a specific piece 
-                      of data, you need to traverse the magnetic tape from the beginning 
-                      (or from a specific point) sequentially until reaching the desired block. 
-                      This means that data access occurs in the order in which it was recorded. 
-                      Sequential access is generally slower because it requires traversing 
-                      the entire magnetic tape or a long distance to access a specific piece of data. 
-                      The search speed depends on the speed of the tape scrolling, recording density, and the total length of the tape.
-                      <br />
-                      </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter            
-                },
-                {
-                  // TO DO Bouhamza
-                  id: 228,
-                  title: "8) Magnetic disks",
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>a. Organisation du disque</strong>
-                      </h4>
-                    ....
-                    </p>
-                  ),
-                  subChapterVisualisation: null, // no visualisation is needed for this subchapter
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>B-Physical recording format (F &gt; 1):</strong>
-                      </h4>
-                      A physical record (block) consists of four zones: the address mark, the counting zone, the key zone, and the data zone.
-                      <br />
-                    </p>
-                  ),
-      
-                  // TO Do Visualisation To Be Continued
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>C-Recording formats :</strong>
-                      </h4>
-                      The format of data recorded on addressable media depends on the type of records (fixed-size, variable-size, or indefinite-size), as well as whether these records are blocked or unblocked. Below, we'll cover:
-                      <br />
-                      -The format of unblocked fixed-size records (F=1)
-                      <br />          
-                      -The format of blocked fixed-size records
-                      <br />
-                      -The format of unblocked variable-size records (F=1)
-                      <br />
-                      -The format of blocked variable-size records
-                      <br />
-                    </p>
-                  ),
-      
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>C.1.The format of unblocked fixed-size records (F=1):</strong>
-                      </h4>
-                      In this case, all records in the file have a fixed length. 
-                      Each data zone contains a single logical record, 
-                      with the key zone reserved for the record identifier, if it has one. Typically, 
-                      this identifier is not repeated in the data zone.
-                      <br />
-                    </p>
-                  ),
-      
-                  // TO Do Visualisation To Be Continued
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>C.2.The format of blocked fixed-size records</strong>
-                      </h4>
-                      In this case, all records in the file have a fixed length. 
-                      Each block contains multiple logical records. 
-                      Therefore, all blocks are of the same size, except for the last one, 
-                      which may be shorter.If logical records have an identifier, there is:
-                      <br />
-                      -At the level of each block, the key zone will contain the largest identifier of the logical records within the block.
-                      <br />
-                      -At the level of each logical record, there is a key zone, which will contain the key of the logical record.
-                      <br />
-                    </p>
-                  ),
-      
-                  // TO Do Visualisation To Be Continued
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>C.3.The format of unblocked variable-size records (F=1)</strong>
-                      </h4>
-                      In this case, the length of logical records is variable, but it is between two known bounds. 
-                      Each physical record contains a counter indicating the length of 
-                      the logical record, including the counter itself. Another counter
-                      indicates the length of the block, also including this counter. 
-                      Although this second counter has no utility in the case of unblocked records,
-                      it is still present.
-                      <br />
-                    </p>
-                  ),
-      
-                  // TO Do Visualisation To Be Continued
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>C.4.The format of blocked variable-size records</strong>
-                      </h4>
-                      In this case, the format of the data zone is similar to that of the unblocked record. 
-                      In the presence of identifiers for the logical records, a specific zone is dedicated to 
-                      the largest identifier among those of the records in the block.
-                      <br />
-                    </p>
-                  ),
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>D-Recording density on a disk</strong>
-                      </h4>
-                      Recording density on a disk represents the number of bits that can be stored 
-                      per inch along a recording track, measured in bpi (bits per inch). 
-                      Generally, the density is calculated according to the following formula:
-                      <br />
-                      <h4>
-                        <strong>D = Nb / L</strong>
-                      </h4>
-                      As :
-                      <br />
-                      - Nb : The number of bits.
-                      <br />
-                      - L : Length in inches.
-                      <br />
-                      The linear recording density per track is calculated as follows:
-                      <h4>
-                        <strong>Dl = Nbp / L</strong>
-                      </h4>
-                      <br />
-                      As :
-                      <br />
-                      - Nbp : Number of bits per track
-                      <br />
-                      - L: Length of a track in inches
-                      <br />
-                    </p>
-                  ),
-      
-                },
-                {
-                  subChapterContent: (
-                    <p>
-                      <h4>
-                        <strong>E-Hard disk capacity</strong>
-                      </h4>
-                      The capacity of a hard disk is the amount of data it can store. 
-                      It is expressed in bytes, kilobytes, and beyond (see the table below). 
-                      The capacity of a disk depends on its geometry and sector capacity.
-                      <br />
-      
-                      <h4>
-                        <strong>Cd = Cs * Nsp * Nc * Nt</strong>
-                      </h4>
-      
-                      <br />
-                      - Cs: Sector capacity.
-                      <br />
-                      - Nsp: Number of sectors per track.
-                      <br />
-                      - Nc: Number of cylinders.
-                      <br />
-                      - Nt: Number of heads.
-                      <br />
-                    </p>
-                  )
-                },
-          ]},
+      // TODO Oussama
+      {
+        chapterId: 2,
+        title: "Media concepts",
+        chapterDescription:
+          "The central memory of the computer is a volatile memory, that is to say that its contents are erased when the power supply to the computer is interrupted. However, the programs and data stored in central memory and primarily the system code and data operating conditions need to be preserved beyond this cutoff. The commonly used solution to deal with this problem consists of storing the data on non-volatile mass media, such as such as the hard disk, the floppy disk, the CD-ROM or even the magnetic tape, in units called files.",
+
+        subChapter: [
+          {
+            id: 221,
+            title: "1) Introduction",
+            subChapterContent: (
+              <p>
+                The central memory of the computer is a volatile memory, that is
+                to say that its contents are erased when the power supply to the
+                computer is interrupted. However, the programs and data stored
+                in central memory and primarily the system code and data
+                operating conditions need to be preserved beyond this cutoff.
+                The commonly used solution to deal with this problem consists of
+                storing the data on non-volatile mass media, such as such as the
+                hard disk, the floppy disk, the CD-ROM or even the magnetic
+                tape, in units called files.
+                <br />{" "}
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            id: 222,
+            title: "2) Primary Memory vs. Secondary Memory",
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>A. Volatility:</strong>
+                </h4>{" "}
+                RAM: RAM has a limited capacity, usually measured in GB. The
+                average RAM capacity in personal computers generally ranges from
+                4 GB to 32 GB or more, depending on the needs and type of
+                computer. RAM is much faster than secondary memory. It is
+                designed for quick access to data currently in use.
+                <br />
+                <h4>
+                  <strong>B. Capacity:</strong>
+                </h4>{" "}
+                - RAM: RAM is volatile memory, which means that the data it
+                contains is temporary and are erased when the computer is turned
+                off or restarted. She serves primarily to store data in use by
+                the processor and programs running.
+                <br />
+                - Secondary memory: Secondary memory is non-volatile, which
+                means that the data stored there remain intact even when the
+                computer is turned off. This is the place where are stored
+                long-term data, such as files and programs.
+                <br />
+                <h4>
+                  <strong>C. Secondary memory:</strong>
+                </h4>{" "}
+                Secondary memory has a much larger capacity than RAM, ranging
+                from 128 GB to several TB for common hard drives. It is used to
+                store large amounts of data permanently.
+                <br />
+                <h4>
+                  <strong>D. Access Speed:</strong>
+                </h4>{" "}
+                - RAM: RAM offers very fast access to data, measured in
+                nanoseconds (ns), which allows the processor almost
+                instantaneous access to data. -Secondary memory: Secondary
+                memory is slower than RAM in terms of data access, with access
+                times measured in milliseconds (ms) for hard drives. Data stored
+                in secondary memory needs some time to be transferred to RAM
+                before being accessible to the processor.
+                <br />
+                <h4>
+                  <strong>E. Cost:</strong>
+                </h4>{" "}
+                - RAM: RAM is more expensive per unit of storage than secondary
+                memory. The cost of RAM varies depending on capacity, speed, and
+                type of RAM (DDR3, DDR4, DDR5, etc.). - Secondary memory:
+                Secondary memory is generally cheaper in terms of cost per GB
+                than RAM, making it a more economical way to store large amounts
+                of data permanently.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            id: 223,
+            title: "3) Magnetic storage media",
+            subChapterContent: (
+              <p>
+                The recording on a magnetic medium, whether it's tape or disk,
+                relies on the same principle: the magnetization of a surface
+                covered with a magnetizable substance.
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            // TO DO Bouhamza
+            id: 224,
+            title: "4) Principle of magnetic recording",
+            subChapterContent: <p>....</p>,
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            // TO DO Bouhamza
+            id: 225,
+            title: "5) Recording density",
+            subChapterContent: <p>....</p>,
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            id: 226,
+            title: "6) Recording modes",
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>6.1.RZ mode (Return to Zero) :</strong>
+                </h4>{" "}
+                In this mode, each data bit (1 or 0) is represented by a
+                magnetic transition (a direction of magnetization). The bits are
+                separated by a neutral value (non-magnetized zone). It is this
+                absence of magnetization that corresponds to zero.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: (
+              <VisualisationComponent
+                animationData={ReturnToZero}
+                title={"Return To Zero"}
+                description={``}
+              />
+            ),
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>6.2.NRZ mode (Non Return to Zero) :</strong>
+                </h4>{" "}
+                Unlike the RZ mode, the NRZ (Non Return to Zero) mode does not
+                require a return to zero after each bit. In NRZ mode, the
+                magnetic state remains constant throughout the duration of a
+                sequence of equal bits, whether they are 1s or 0s, which means
+                there is no magnetic transition in the middle. Another magnetic
+                state is generated only if there is a transition from 1 to 0 or
+                from 0 to 1.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: (
+              <VisualisationComponent
+                animationData={NoReturnToZero}
+                title={"Non Return To Zero"}
+                description={``}
+              />
+            ),
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>6.3.PE mode (Phase Encoding) :</strong>
+                </h4>{" "}
+                In this mode, each data bit is represented by two small magnets.
+                In between, there is a transition. If this transition is
+                positive, we have a 1, if it is negative, we have a 0.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: (
+              <VisualisationComponent
+                animationData={PhaseEncoding}
+                title={"Phase Encoding"}
+                description={``}
+              />
+            ),
+          },
+          {
+            id: 227,
+            title: "7) Recording Formats",
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>7.1.1.Recording format in NRZ mode:</strong>
+                </h4>{" "}
+                In this mode, control characters are added to the physical
+                block. This integration aims to allow control mechanisms to
+                verify the integrity of data, whether during writing or reading.
+                The main control characters used for this purpose are the CRC
+                (Cyclic Redundancy Check) and the LRC (Longitudinal Redundancy
+                Check). The reading process of a block starts at the first byte
+                identified after a GAP and continues until the next GAP is
+                detected. During reading, only the actual data (logical records)
+                are transferred to the main memory. Control characters are not
+                transmitted.
+                <h4>
+                  <strong>A-Unblocked recording (F=1):</strong>
+                </h4>
+                In this case, the number of control characters (CRC and LRC) is
+                equal to the number of logical records, since each block
+                contains only one logical record, resulting in a significant
+                loss of storage space.
+              </p>
+            ),
+            subChapterVisualisation: (
+              <VisualisationComponent
+                animationData={NRZBloque}
+                title={"Recording format in NRZ mode:"}
+                description={``}
+              />
+            ),
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>B-Blocked recording (F &gt; 1):</strong>
+                </h4>
+                In this case, the number of control characters (CRC and LRC) is
+                equal to the number of logical records, since each block
+                contains only one logical record, resulting in a significant
+                loss of storage space.
+              </p>
+            ),
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>7.1.2.Recording format in PE mode:</strong>
+                </h4>{" "}
+                In this mode, 41 characters, called synchronization characters,
+                are inserted before and after the useful data. The reading
+                process of a block begins with the first record following the 41
+                synchronization characters and continues until the next 41
+                characters are identified.
+                <h4>
+                  <strong>A-Unblocked recording (F=1):</strong>
+                </h4>
+                Each logical record begins and ends with 41 synchronization
+                characters.
+                <br />
+              </p>
+            ),
+
+            // to DO Visualisation To BE Continued
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>B-Blocked recording (F &gt; 1):</strong>
+                </h4>
+                Each physical block (containing several logical records) begins
+                and ends with 41 synchronization characters.
+                <br />
+              </p>
+            ),
+
+            // TO Do Visualisation To Be Continued
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>7.2.Characteristics of a magnetic tape:</strong>
+                </h4>{" "}
+                The main characteristics of a magnetic tape are as follows:
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>A.Storage capacity:</strong>
+                </h4>{" "}
+                <br />
+                The storage capacity of a magnetic tape is generally expressed
+                in terabytes (TB) or gigabytes (GB), depending on the technology
+                and recording density. Modern magnetic tapes can offer
+                capacities ranging from a few tens of GB to several TB per
+                cartridge.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>B.Recording density:</strong>
+                </h4>{" "}
+                <br />
+                Recording density indicates the number of bits recorded per unit
+                length, generally expressed in bpi (bits per inch). A higher
+                recording density allows more data to be stored on the same
+                length of tape. The recording density of magnetic tapes is
+                constantly increasing and can vary depending on the technology,
+                format, and manufacturer. However, modern magnetic tapes
+                typically offer high recording densities, ranging from 6,000 to
+                50,000 bpi.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>C.Tape width:</strong>
+                </h4>{" "}
+                <br />
+                The tape width is the physical width of the magnetic tape. It
+                can vary depending on the technology and application, ranging
+                from a few millimeters to several inches.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>D.Tape width:</strong>
+                </h4>{" "}
+                <br />
+                Tape length: The tape length determines the total storage
+                capacity of a tape cartridge. Magnetic tapes can vary in length,
+                ranging from a few meters to several tens of meters.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>E.Lifespan and reliability:</strong>
+                </h4>{" "}
+                <br />
+                Magnetic tapes are generally designed to have a long lifespan
+                and good reliability for long-term data preservation. A
+                high-quality magnetic tape can last for several decades.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>F.Types of tapes:</strong>
+                </h4>{" "}
+                <br />
+                There are different types of magnetic tapes, including backup
+                tapes, data storage tapes, tapes for audio/video production,
+                etc.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>F.Sequential access:</strong>
+                </h4>{" "}
+                <br />
+                Sequential access mode is the most common for magnetic tapes.
+                Data is stored linearly on the tape, and to access a specific
+                piece of data, you need to traverse the magnetic tape from the
+                beginning (or from a specific point) sequentially until reaching
+                the desired block. This means that data access occurs in the
+                order in which it was recorded. Sequential access is generally
+                slower because it requires traversing the entire magnetic tape
+                or a long distance to access a specific piece of data. The
+                search speed depends on the speed of the tape scrolling,
+                recording density, and the total length of the tape.
+                <br />
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            // TO DO Bouhamza
+            id: 228,
+            title: "8) Magnetic disks",
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>a. Organisation du disque</strong>
+                </h4>
+                ....
+              </p>
+            ),
+            subChapterVisualisation: null, // no visualisation is needed for this subchapter
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>B-Physical recording format (F &gt; 1):</strong>
+                </h4>
+                A physical record (block) consists of four zones: the address
+                mark, the counting zone, the key zone, and the data zone.
+                <br />
+              </p>
+            ),
+
+            // TO Do Visualisation To Be Continued
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>C-Recording formats :</strong>
+                </h4>
+                The format of data recorded on addressable media depends on the
+                type of records (fixed-size, variable-size, or indefinite-size),
+                as well as whether these records are blocked or unblocked.
+                Below, we'll cover:
+                <br />
+                -The format of unblocked fixed-size records (F=1)
+                <br />
+                -The format of blocked fixed-size records
+                <br />
+                -The format of unblocked variable-size records (F=1)
+                <br />
+                -The format of blocked variable-size records
+                <br />
+              </p>
+            ),
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>
+                    C.1.The format of unblocked fixed-size records (F=1):
+                  </strong>
+                </h4>
+                In this case, all records in the file have a fixed length. Each
+                data zone contains a single logical record, with the key zone
+                reserved for the record identifier, if it has one. Typically,
+                this identifier is not repeated in the data zone.
+                <br />
+              </p>
+            ),
+
+            // TO Do Visualisation To Be Continued
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>C.2.The format of blocked fixed-size records</strong>
+                </h4>
+                In this case, all records in the file have a fixed length. Each
+                block contains multiple logical records. Therefore, all blocks
+                are of the same size, except for the last one, which may be
+                shorter.If logical records have an identifier, there is:
+                <br />
+                -At the level of each block, the key zone will contain the
+                largest identifier of the logical records within the block.
+                <br />
+                -At the level of each logical record, there is a key zone, which
+                will contain the key of the logical record.
+                <br />
+              </p>
+            ),
+
+            // TO Do Visualisation To Be Continued
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>
+                    C.3.The format of unblocked variable-size records (F=1)
+                  </strong>
+                </h4>
+                In this case, the length of logical records is variable, but it
+                is between two known bounds. Each physical record contains a
+                counter indicating the length of the logical record, including
+                the counter itself. Another counter indicates the length of the
+                block, also including this counter. Although this second counter
+                has no utility in the case of unblocked records, it is still
+                present.
+                <br />
+              </p>
+            ),
+
+            // TO Do Visualisation To Be Continued
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>
+                    C.4.The format of blocked variable-size records
+                  </strong>
+                </h4>
+                In this case, the format of the data zone is similar to that of
+                the unblocked record. In the presence of identifiers for the
+                logical records, a specific zone is dedicated to the largest
+                identifier among those of the records in the block.
+                <br />
+              </p>
+            ),
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>D-Recording density on a disk</strong>
+                </h4>
+                Recording density on a disk represents the number of bits that
+                can be stored per inch along a recording track, measured in bpi
+                (bits per inch). Generally, the density is calculated according
+                to the following formula:
+                <br />
+                <h4>
+                  <strong>D = Nb / L</strong>
+                </h4>
+                As :
+                <br />
+                - Nb : The number of bits.
+                <br />
+                - L : Length in inches.
+                <br />
+                The linear recording density per track is calculated as follows:
+                <h4>
+                  <strong>Dl = Nbp / L</strong>
+                </h4>
+                <br />
+                As :
+                <br />
+                - Nbp : Number of bits per track
+                <br />
+                - L: Length of a track in inches
+                <br />
+              </p>
+            ),
+          },
+          {
+            subChapterContent: (
+              <p>
+                <h4>
+                  <strong>E-Hard disk capacity</strong>
+                </h4>
+                The capacity of a hard disk is the amount of data it can store.
+                It is expressed in bytes, kilobytes, and beyond (see the table
+                below). The capacity of a disk depends on its geometry and
+                sector capacity.
+                <br />
+                <h4>
+                  <strong>Cd = Cs * Nsp * Nc * Nt</strong>
+                </h4>
+                <br />
+                - Cs: Sector capacity.
+                <br />
+                - Nsp: Number of sectors per track.
+                <br />
+                - Nc: Number of cylinders.
+                <br />
+                - Nt: Number of heads.
+                <br />
+              </p>
+            ),
+          },
+        ],
+      },
 
       // TODO Chakib
       { chapterId: 3, title: "....", chapterDescription: "" },

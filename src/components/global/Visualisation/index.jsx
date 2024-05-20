@@ -17,7 +17,7 @@ const VisualisationComponent = ({
 }) => {
   const defaultOptions = {
     loop: true,
-    autoplay: false,
+    autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -31,7 +31,7 @@ const VisualisationComponent = ({
           <CardTitle>Visualisation: {title}</CardTitle>
         </CardHeader>
         <CardDescription>{description}</CardDescription>
-        <CardContent>
+        <CardContent className="border border-blue-400 rounded-lg bg-slate-100 dark:bg-slate-400">
           <Lottie options={defaultOptions} height={height} width={width} />
         </CardContent>
       </Card>

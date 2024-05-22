@@ -7,10 +7,10 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="h-[90dvh] relative z-10 overflow-hidden pb-16 pt-[10dvh] dark:bg-gray-dark md:pb-[120px] xl:pb-[160px]2xl:pb-[200px]"
+        className="h-[120dvh]  relative z-10 overflow-hidden pb-16 pt-[20dvh] dark:bg-gray-dark md:pb-[120px] xl:pb-[160px] 2xl:pb-[200px]"
       >
         <div className="container">
-          <div className="-mx-4 flex flex-wrap">
+          <div className="-mx-4 flex flex-wrap ">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
@@ -36,12 +36,16 @@ const Hero = () => {
                     <FaGithub className="ml-2" />
                   </Link>
                 </div>
+                <img
+                  src={"/animation.gif"}
+                  alt=""
+                  className="w-[120dvw] mt-14"
+                />
               </div>
             </div>
           </div>
         </div>
-        <div className="dark:baked_background absolute right-0 top-0 z[-1] opacity-75"></div>
-        {/* <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
+        <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="450"
             height="556"
@@ -281,7 +285,7 @@ const Hero = () => {
               </radialGradient>
             </defs>
           </svg>
-        </div> */}
+        </div>
       </section>
     </>
   );

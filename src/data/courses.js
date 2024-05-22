@@ -1355,7 +1355,7 @@ export const courses = [
       },
 
       // TODO Chakib
-      { chapterId: 3, title: "....", chapterDescription: "" },
+      { chapterId: 3, title: "Sequential Structures", chapterDescription: "" },
       {
         chapterId: 4,
         title: "Index structures",
@@ -1713,6 +1713,8 @@ export const courses = [
           {},
         ],
       },
+      // TODO Medj
+      { chapterId: 6, title: "Sequential Structures", chapterDescription: "" },
     ],
 
     path: "/courses/sfsd/learn",

@@ -25,7 +25,6 @@ const Courses = () => {
       const docRef = doc(db, "users", user.uid);
       const docSnap = await getDoc(docRef);
 
-      console.log("Profile updated", docSnap.data());
       if (!auth.currentUser.displayName && docSnap.exists()) {
         const res = await updateProfile(auth.currentUser, {
           displayName: docSnap.data().userName,

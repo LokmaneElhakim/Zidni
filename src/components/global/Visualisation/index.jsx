@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../../ui/card";
+
 const VisualisationComponent = ({
   width = 550,
   height = 400,
@@ -25,13 +26,13 @@ const VisualisationComponent = ({
   };
 
   return (
-    <div className="m-2">
+    <div className="m-2 rounded-lg">
       <Card>
         <CardHeader>
           <CardTitle>Visualisation: {title}</CardTitle>
         </CardHeader>
         <CardDescription>{description}</CardDescription>
-        <CardContent className="border border-blue-400 rounded-lg bg-slate-100 dark:bg-slate-400">
+        <CardContent className="rounded-lg">
           <Lottie options={defaultOptions} height={height} width={width} />
         </CardContent>
       </Card>

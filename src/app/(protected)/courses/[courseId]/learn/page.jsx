@@ -2,6 +2,12 @@
 import * as React from "react";
 import { courses } from "../../../../../data/courses";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../../../../components/ui/accordion";
+import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
@@ -74,7 +80,7 @@ const page = () => {
               ))}
             </>
           </ResizablePanel>
-          <ResizableHandle withHandle className={"min-h-[91dvh]"} />
+          <ResizableHandle withHandle className={"min-h-[90dvh] "} />
           <ResizablePanel defaultSize={65} className="z-[40] w-full">
             <Visualisation index={index} courses={courses} />
           </ResizablePanel>
@@ -94,7 +100,7 @@ const Visualisation = ({ courses, index }) => {
 
   filteredChapter = filterChapter(idx);
   return (
-    <div className="min-h-[85dvh] max-h-[83dvh] border-2 rounded-sm m-0 p-0 dark:bg-background overflow-y-scroll">
+    <div className="min-h-[85dvh] max-h-[89dvh] border-2 rounded-sm m-0 p-0 dark:bg-background overflow-y-scroll">
       <div className={"flex-col justify-center items-center sm:flex"}>
         <Card className="m-4">
           <CardHeader className="mb-0">
@@ -106,18 +112,26 @@ const Visualisation = ({ courses, index }) => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div key={filteredChapter[0]?.chapterId}>
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full"
+              key={filteredChapter[0]?.chapterId}
+            >
               {filteredChapter[0]?.subChapter?.map((subChapter) => {
                 return (
-                  <div key={subChapter?.id}>
-                    <br />
-                    <h3 className="font-bold">{subChapter?.title}</h3>
-                    <div>{subChapter?.subChapterContent}</div>
-                    {subChapter?.subChapterVisualisation}
-                  </div>
+                  <>
+                    <AccordionItem value={subChapter?.id} key={subChapter?.id}>
+                      <AccordionTrigger>{subChapter?.title}</AccordionTrigger>
+                      <AccordionContent>
+                        {subChapter?.subChapterContent}
+                        {subChapter?.subChapterVisualisation}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </>
                 );
               })}
-            </div>
+            </Accordion>
           </CardContent>
         </Card>
       </div>

@@ -33,7 +33,6 @@ export default function SignIn() {
   } = useForm({ defaultValues: { email: "", password: "" } });
   const onSubmitHandler = (data) => {
     try {
-      console.log({ data });
       handleSignIn(data);
       reset({ email: "", password: "" });
     } catch (error) {
@@ -63,10 +62,9 @@ export default function SignIn() {
         data.email,
         data.password
       );
-      console.log(res);
+      res;
     } catch (e) {
       if (e.code === "auth/invalid-email") {
-        console.log(e);
         toast.error("Invalid Email", {
           description:
             "Either the email is invalid or you haven't sign up yet. Please try again.",

@@ -6,7 +6,6 @@ import Question from "./Question";
 import NextButton from "./NextButton";
 import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
-import Footer from "./Footer";
 import Timer from "./Timer";
 import questions from "../../data/quiz/sfsd/questions.json";
 import { Card, CardContent } from "../ui/card";
@@ -83,7 +82,7 @@ export default function App() {
   }, []);
 
   return (
-    <Card className="self-center flex flex-col items-center justify-center w-fit mx-[10%] my-4 p-5">
+    <Card className="self-center flex flex-col items-center justify-center w-full mx-[10%] my-4 p-5">
       {status === "loading" && <Loader />}
       {status === "ready" && (
         <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
@@ -103,7 +102,7 @@ export default function App() {
               dispatch={dispatch}
               answer={answer}
             />
-            <Footer>
+            <div className="w-full flex justify-between items-center">
               <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
               <NextButton
                 dispatch={dispatch}
@@ -112,7 +111,7 @@ export default function App() {
                 index={index}
                 status={status}
               />
-            </Footer>
+            </div>
           </>
         )}
         {status === "finished" && (

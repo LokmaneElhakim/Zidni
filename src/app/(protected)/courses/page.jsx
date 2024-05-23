@@ -19,8 +19,8 @@ import { updateProfile } from "firebase/auth";
 import { cn } from "../../../utils/cn";
 
 const Courses = () => {
-  // const [user] = useAuthState(auth);
-  const user = true;
+  const [user] = useAuthState(auth);
+  // const user = true;
   React.useEffect(() => {
     const getUsers = async () => {
       const docRef = doc(db, "users", user.uid);

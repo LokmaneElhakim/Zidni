@@ -69,12 +69,6 @@ const page = () => {
                     >
                       Take quiz
                     </Link>
-                    <Link
-                      href={selectedCourse.next}
-                      className={cn("my-2", buttonVariants())}
-                    >
-                      Next course
-                    </Link>
                   </div>
                 </CardContent>
               </Card>

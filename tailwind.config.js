@@ -1,15 +1,14 @@
 import defaultTheme from "tailwindcss/defaultTheme";
-
 import colors from "tailwindcss/colors";
 import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
 
 /** @type {import('tailwindcss').Config} */
 export const darkMode = ["class"];
 export const content = [
-  "./pages/**/*.{js,jsx}",
-  "./components/**/*.{js,jsx}",
-  "./app/**/*.{js,jsx}",
-  "./src/**/*.{js,jsx}",
+  "./pages/**/*.{js,jsx,ts,tsx}",
+  "./components/**/*.{js,jsx,ts,tsx}",
+  "./app/**/*.{js,jsx,ts,tsx}",
+  "./src/**/*.{js,jsx,ts,tsx}",
 ];
 export const prefix = "";
 export const theme = {
@@ -85,9 +84,10 @@ export const theme = {
   },
   plugins: [require("tailwindcss-animate"), addVariablesForColors],
 };
+
 export function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 

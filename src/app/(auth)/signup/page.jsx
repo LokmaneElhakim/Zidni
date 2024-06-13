@@ -130,7 +130,7 @@ export default function SignUp() {
                     }
                     id="userName"
                     type="userName"
-                    placeholder="lokmanehakim@gmail.com"
+                    placeholder="User Name"
                     {...register("userName", {
                       required: true,
                       maxLength: 40,
@@ -161,7 +161,7 @@ export default function SignUp() {
                     }
                     id="email"
                     type="email"
-                    placeholder="lokmanehakim@gmail.com"
+                    placeholder="Email"
                     {...register("email", {
                       required: true,
                       maxLength: 40,

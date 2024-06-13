@@ -54,24 +54,27 @@ export const BentoGridItem = ({
         <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
           {description}
         </div>
-        {!comingSoon && (
-          <button
-            className={cn("my-2", buttonVariants())}
-            onClick={() => {
-              comingSoon || router.push(path);
-            }}
-          >
-            Enroll
-          </button>
-        )}
 
         {/*         
       TODO:CHAKIB HADDADI
       */
         /* <div className="mt-20 font-sans font-normal text-neutral-600 text-sm dark:text-neutral-300">
-          Course Made by :
-        </div> */}
+     Course Made by :
+    </div> */}
       </div>
+      {comingSoon || (
+        <button
+          className={cn(
+            "my-2 relative left-3 bottom-4 max-w-20",
+            buttonVariants()
+          )}
+          onClick={() => {
+            comingSoon || router.push(path);
+          }}
+        >
+          Enroll
+        </button>
+      )}
     </div>
   );
 };

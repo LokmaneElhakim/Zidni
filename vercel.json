@@ -3,7 +3,8 @@
     "deploymentEnabled": {
       "main": false,
       "bdd": false,
-      "thg": false
+      "thg": false,
+      "docs": false
     }
   }
 }

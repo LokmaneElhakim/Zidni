@@ -3,12 +3,44 @@ import Link from "next/link";
 import { Message } from "./message";
 import { cn } from "../../../utils/cn";
 import { buttonVariants } from "../../ui/button";
-// import Input from "postcss/lib/input";
 import { SendHorizontal } from "lucide-react";
 import { Input } from "../../ui/input";
 
+const initialQuestions = [
+  {
+    id: 2,
+    question: "What is the main purpose of the Zidni platform?",
+    response:
+      "The main purpose of the Zidni platform is to provide an innovative learning experience through immersive virtual environments and interactive content.",
+  },
+  {
+    id: 14,
+    question: "What features does Zidni offer to enhance learning?",
+    response:
+      "Zidni offers features such as virtual reality-based lessons, interactive simulations, real-time feedback, and customizable learning paths to enhance the educational experience.",
+  },
+  {
+    id: 26,
+    question: "Who can benefit from using Zidni?",
+    response:
+      "Students, educators, and institutions can benefit from using Zidni. It is designed to cater to various educational levels and subjects, making learning more engaging and effective.",
+  },
+  {
+    id: 37,
+    question: "Is Zidni compatible with different devices?",
+    response:
+      "Yes, Zidni is compatible with various devices including desktops, tablets, and VR headsets, allowing users to access the platform from anywhere.",
+  },
+  {
+    id: 48,
+    question: "How can users get started with Zidni?",
+    response:
+      "Users can get started with Zidni by visiting the platform's website, creating an account, and exploring the available courses and learning materials. The platform provides easy-to-follow instructions for new users.",
+  },
+];
 const Chatbot = () => {
   const [state, setState] = useState(false);
+  const [messageInfo, setMessageInfo] = useState(false);
   const [initQuestion, setInitQuestion] = useState([]);
   const [initResponse, setInitResponse] = useState([]);
   const [listQst, setListQst] = useState([]);
@@ -16,31 +48,9 @@ const Chatbot = () => {
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [questionInput, setQuestionInput] = useState("");
+  const [predefiedQst, setPredefinedQst] = useState(initialQuestions);
 
   // List of questions about matrices, linear transformations, and vectors with their responses
-  const matrixQuestions = [
-    {
-      question: "What is a matrix?",
-      response:
-        "A matrix is a rectangular array of numbers, symbols, or expressions arranged in rows and columns.",
-    },
-    {
-      question: "What is matrix multiplication?",
-      response:
-        "Matrix multiplication is a binary operation that produces a matrix from two matrices. It is defined if and only if the number of columns of the first matrix is equal to the number of rows of the second matrix.",
-    },
-    {
-      question: "What is a linear transformation?",
-      response:
-        "A linear transformation is a mapping between two vector spaces that preserves the operations of vector addition and scalar multiplication.",
-    },
-    {
-      question: "What is a vector?",
-      response:
-        "A vector is a quantity or phenomenon that has two independent properties: magnitude and direction. Vectors are often represented as arrows in a coordinate space.",
-    },
-    // Add more questions and responses as needed
-  ];
 
   useEffect(() => {
     if (state) {
@@ -55,11 +65,12 @@ const Chatbot = () => {
 
   const onSendButton = () => {
     if (inputValue === "") return;
-
+    /* when the chatbot is available
+    
     setListQst((prev) => [...prev, inputValue]);
     setIsLoading(true);
 
-    const matchedQuestion = matrixQuestions.find((question) =>
+    const matchedQuestion = initialQuestions.find((question) =>
       inputValue.toLowerCase().includes(question.question.toLowerCase())
     );
 
@@ -92,18 +103,22 @@ const Chatbot = () => {
         setListRes((prev) => [...prev, ""]);
       }, 1000);
     }
+    */
     setInputValue("");
   };
 
-  const handleQuestionClick = (question) => {
-    const matchedResponse = matrixQuestions.find(
-      (q) => q.question === question
+  const handleQuestionClick = (clickedQuestion) => {
+    const matchedResponse = initialQuestions.find(
+      (q) => q.question === clickedQuestion
     )?.response;
 
     if (matchedResponse) {
-      setListQst((prev) => [...prev, question]);
+      setListQst((prev) => [...prev, clickedQuestion]);
       setListRes((prev) => [...prev, matchedResponse]);
     }
+    setPredefinedQst((prevQuestions) =>
+      prevQuestions.filter((qst) => qst.question !== clickedQuestion)
+    );
   };
 
   const renderOpenButton = () => {
@@ -156,6 +171,18 @@ const Chatbot = () => {
             </Link>
           </div>
           <div className="flex-1 p-2 overflow-y-auto bg-gray-100 dark:bg-gray-700 space-y-5">
+            {messageInfo && (
+              <div
+                className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-lg"
+                role="alert"
+              >
+                <p className="font-bold">Chatbot Unavailable</p>
+                <p>
+                  Sorry, the chatbot is not available at the moment. However,
+                  you can still explore the predefined questions below.
+                </p>
+              </div>
+            )}
             <div className="flex justify-start flex-col space-y-5">
               {initQuestion.map((qst, index) => (
                 <Fragment key={index}>
@@ -194,11 +221,14 @@ const Chatbot = () => {
           <div className="p-3 border-t border-gray-300 bg-gray-50 dark:bg-gray-800 h-[24%] overflow-y-auto sm:text-sm rounded-lg">
             <span className="font-semibold text-sm">Suggested Questions:</span>
             <div className="mt-2 space-y-1 max-h-[120px] overflow-y-auto">
-              {matrixQuestions.map((question, index) => (
+              {predefiedQst.map((question, index) => (
                 <div
                   key={index}
                   className="cursor-pointer text-blue-600 hover:underline text-sm"
-                  onClick={() => handleQuestionClick(question.question)}
+                  onClick={() => {
+                    setMessageInfo(false);
+                    handleQuestionClick(question.question);
+                  }}
                 >
                   {question.question}
                 </div>

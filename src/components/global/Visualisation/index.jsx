@@ -7,6 +7,7 @@ import { cn } from "../../../utils/cn";
 import { BadgeInfo, Info } from "lucide-react";
 import { buttonVariants } from "../../ui/button";
 export const VisualisationComponent = ({
+  intro,
   animationData,
   title,
   description,
@@ -28,6 +29,13 @@ export const VisualisationComponent = ({
           <CardTitle>Visualisation: {title}</CardTitle>
         </CardHeader>
         <CardDescription>
+          {description && (
+            <>
+              {description}
+              <br />
+              <br />
+            </>
+          )}
           <span className="dark:text-[#f3f7a1] text-[#6e7228] text-sm">
             Click on the animation to toggle it.
           </span>
@@ -50,9 +58,9 @@ export const VisualisationComponent = ({
             className={"relative !ml-auto !mr-4 !-mt-7 float-right"}
             onClick={() => setShowCard((prev) => !prev)}
           >
-            <Info color="#ffbd03" />
+            {!intro && <Info color="#ffbd03" />}
           </PopoverTrigger>
-          {showCard && (
+          {showCard && !intro && (
             <PopoverContent
               className={`transition-opacity duration-500 rounded-lg pt-5 pb-3 pl-5 bg-muted/100 ${
                 showCard ? "opacity-100" : "opacity-0"

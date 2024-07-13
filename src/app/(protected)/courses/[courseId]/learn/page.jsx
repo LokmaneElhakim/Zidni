@@ -98,7 +98,11 @@ const page = () => {
           withHandle
           className={"min-h-[85dvh] max-h-[92dvh] "}
         />
-        <ResizablePanel defaultSize={65} className="z-[40] !w-full !p-0 !m-0">
+        <ResizablePanel
+          defaultSize={65}
+          minSize={55}
+          className="z-[40] !w-full !p-0 !m-0"
+        >
           <Sheet>
             <SheetTrigger>
               <button

@@ -15,6 +15,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { updateProfile } from "firebase/auth";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../../../components/ui/bento-grid";
+import { cn } from "../../../utils/cn";
 const Courses = () => {
   const [user] = useAuthState(auth);
   // const user = true;
@@ -46,10 +47,22 @@ const Courses = () => {
                 Hi there {user?.displayName ?? ""}👋,
               </h1>
               <p className="lg:text-lg text-base ml-2 mt-2 mb-5">
-                Glad to see you , excited to explore our new way of learning
+                Glad to see you, excited to explore our new way of learning
                 together. Let's dive in!
               </p>
+              <p className="lg:text-lg text-base ml-2 mt-2 mb-5">
+                New here?
+                <Link
+                  href={"/introduction"}
+                  className={cn(
+                    buttonVariants({ variant: "link" }, "!text-blue-500")
+                  )}
+                >
+                  Take a tour
+                </Link>
+              </p>
             </div>
+
             <BentoGrid className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto !h-fit">
               {courses.map((course, i) => (
                 <BentoGridItem

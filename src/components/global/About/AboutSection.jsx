@@ -39,7 +39,7 @@ const AboutSection = () => {
                   Who are we ?
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed mx-auto text-center">
-                  We are a team of passionate educators, technologists, and
+                  We are a team of passionate students, technologists, and
                   designers committed to making education accessible and
                   effective for everyone. With a focus on leveraging the latest
                   advancements in technology, we strive to create a learning

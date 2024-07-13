@@ -1,6 +1,6 @@
 # Zidni eLearning Platform
 
-Welcome to Zidni, an eLearning platform tailored for computer science students. Zidni provides a comprehensive and interactive learning experience, helping you master computer science concepts through engaging content and practical assessments.
+Welcome to Zidni, an eLearning platform tailored for computer science students. Zidni provides a comprehensive and interactive learning experience, helping you master computer science concepts through engaging content and practical assessments, this project was developed as part of our coursework at the Université des Sciences et de la Technologie Houari Boumediene (USTHB).
 
 ## What We Offer
 
@@ -55,7 +55,7 @@ For major changes, please open an issue first to discuss what you would like to 
 
 ## Feedback and Contact
 
-For UI/UX designers and others who have feedback or suggestions, please reach out to us at. We value your insights and are committed to continuously improving our platform.
+For UI/UX designers and others who have feedback or suggestions, please reach out to us. We value your insights and are committed to continuously improving our platform.
 
 ## Contributors
 
@@ -64,6 +64,11 @@ For UI/UX designers and others who have feedback or suggestions, please reach ou
 - Mouloudj Mohamed
 - Bouhamza Abderrahmane
 - Zitouni Oussama Abdelfatah
+- Turki Haris
+
+## Acknowledgments
+
+We would like to express our gratitude to Dr. Berghout Yasser for his guidance and support throughout this project.
 
 ## Stay Tuned
 

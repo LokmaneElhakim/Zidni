@@ -1,31 +1,31 @@
 "use client";
-import * as nodeDeletion from "../../../data/visualisation/sfsd/nodeDeletion.json";
+import * as nodeDeletion from "../../data/visualisation/sfsd/nodeDeletion.json";
 import {
   Accordion,
   AccordionContent,
   AccordionTrigger,
   AccordionItem,
-} from "../../../components/ui/accordion";
+} from "../../components/ui/accordion";
 
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "../../../components/ui/resizable";
+} from "../../components/ui/resizable";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../../components/ui/card";
-import { cn } from "../../../utils/cn";
-import { Button, buttonVariants } from "../../../components/ui/button";
+} from "../../components/ui/card";
+import { cn } from "../../utils/cn";
+import { Button, buttonVariants } from "../../components/ui/button";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Joyride, { STATUS } from "react-joyride";
-import { VisualisationComponent } from "../../../components/global/Visualisation";
+import { VisualisationComponent } from "../../components/global/Visualisation";
 import { Info } from "lucide-react";
 
 const chapters = [

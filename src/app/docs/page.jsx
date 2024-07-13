@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import { docsData } from "./docsData";
 import {
   Card,
   CardContent,

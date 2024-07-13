@@ -78,27 +78,29 @@ const page = () => {
                 </CardHeader>
                 <CardContent>Select a topic to view its guide.</CardContent>
               </Card>
-            ) : iframes[iframe]?.
-              iframes[iframe]?.link
             ) : (
-              <Card>
-                <CardHeader>
-                  <CardTitle className={"!text-black dark:!text-white"}>
-                    Documentation Coming Soon
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  The documentation for this topic is not yet available, but it
-                  will be provided soon. If you don't find what you're looking
-                  for, please contact us at :
-                  <Link
-                    className="cursor-pointer font-semibold underline text-blue-500 ml-1"
-                    href={"mailto:contact.zidni@gmail.com"}
-                  >
-                    contact.zidni@gmail.com
-                  </Link>
-                </CardContent>
-              </Card>
+              <>
+                {iframes[iframe]?.link && (
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className={"!text-black dark:!text-white"}>
+                        Documentation Coming Soon
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      The documentation for this topic is not yet available, but
+                      it will be provided soon. If you don't find what you're
+                      looking for, please contact us at :
+                      <Link
+                        className="cursor-pointer font-semibold underline text-blue-500 ml-1"
+                        href={"mailto:contact.zidni@gmail.com"}
+                      >
+                        contact.zidni@gmail.com
+                      </Link>
+                    </CardContent>
+                  </Card>
+                )}
+              </>
             )}
           </div>
         </div>

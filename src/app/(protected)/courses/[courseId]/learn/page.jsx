@@ -15,7 +15,6 @@ import {
   CardTitle,
 } from "../../../../../components/ui/card";
 import { cn } from "../../../../../utils/cn";
-import Chatbot from "../../../../../components/global/chatbot/index";
 import { buttonVariants } from "../../../../../components/ui/button";
 import Link from "next/link";
 import {
@@ -158,7 +157,6 @@ const page = () => {
           <Visualisation index={index} courseSelected={selectedCourse} />
         </ResizablePanel>
       </ResizablePanelGroup>
-      {/* <Chatbot /> */}
     </div>
   );
 };

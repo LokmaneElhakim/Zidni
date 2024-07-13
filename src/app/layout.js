@@ -1,11 +1,11 @@
 import ScrollToTop from "../components/global/ScrollToTop";
 import "../styles/index.css";
-import Header from "../components/global/Header";
 import { Inter, Syne, ABeeZee } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Header from "../components/global/Header/index";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/logo/usthb.png" />
       <body
         suppressHydrationWarning={true}
-        className={`bg-[#fdfdfd] dark:bg-background ${syne.variable} ${inter.variable} ${abeezee.variable}`}
+        className={`bg-[#fdfdfd] dark:bg-background ${abeezee.className}`}
       >
         <Providers>
           <Header />

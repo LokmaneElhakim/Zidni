@@ -1,9 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, CheckIcon, ChevronsUpDown } from "lucide-react";
 
-import { cn } from "../../../utils/cn";
 import { Button } from "../../ui/button";
 import {
   Command,
@@ -16,9 +14,8 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover";
 import { CaretSortIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
-const frameworks = [
+const courses = [
   {
     value: "File and folder structure",
     path: "/courses/sfsd/learn",
@@ -59,10 +56,10 @@ export function ComboboxDemo() {
           variant="secondary"
           role="combobox"
           aria-expanded={open}
-          className="w-[150px] md:w-[200px] justify-between px-2"
+          className="w-[120px] md:w-[200px] justify-between px-2"
         >
           {value
-            ? frameworks.find((framework) => framework.value === value)?.label
+            ? courses.find((course) => course.value === value)?.label
             : "Select course..."}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -73,18 +70,17 @@ export function ComboboxDemo() {
           <CommandList>
             <CommandEmpty>No courses found.</CommandEmpty>
             <CommandGroup>
-              {frameworks.map((framework) => (
+              {courses.map((course) => (
                 <CommandItem
-                  key={framework.value}
-                  value={framework.value}
+                  key={course.value}
+                  value={course.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue);
                     setOpen(false);
+                    router.replace(course.path ?? "/coming-soon");
                   }}
                 >
-                  <Link href={framework.path ?? "/coming-soon"}>
-                    {framework.label}
-                  </Link>
+                  {course.label}
                 </CommandItem>
               ))}
             </CommandGroup>

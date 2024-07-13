@@ -1,4 +1,3 @@
-
 import GraphInput from "../visualisation/thg/GraphInput";
 import Graphe from "../visualisation/thg/graphe";
 import React from "react";
@@ -7,12 +6,17 @@ export const thg = {
   id: 38,
   title: "Graph theory",
   description:
-  "Explore the fascinating world of Graph Theory in this comprehensive course. You will learn about the fundamental concepts and structures of graphs, including paths, cycles, trees, and networks. The course covers graph algorithms such as shortest path, spanning tree, and network flow algorithms. Applications of graph theory in computer science, biology, social networks, and other fields will also be discussed. By the end of the course, you will be equipped with the knowledge to apply graph theory to solve complex problems.",
+    "In this course you'll learn about the fundamental concepts and structures of graphs, including paths, cycles, trees, and networks. The course covers graph algorithms such as shortest path, spanning tree, and network flow algorithms. By the end of the course, you will be equipped with the knowledge to apply graph theory to solve complex problems.",
   comingSoon: false,
   isNew: true,
-    chaptersTitles:["Basic definitions","Graph Representations","Graph Algorithms","Applications of Graph Theory"],
+  chaptersTitles: [
+    "Basic definitions",
+    "Graph Representations",
+    "Graph Algorithms",
+    "Applications of Graph Theory",
+  ],
 
-    chapters: [
+  chapters: [
     {
       chapterId: 1,
       title: "Basic Definitions",

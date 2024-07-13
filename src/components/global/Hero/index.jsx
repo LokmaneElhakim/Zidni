@@ -4,15 +4,14 @@ import { buttonVariants } from "../../ui/button";
 import { FaGithub } from "react-icons/fa";
 import { ContainerScroll } from "../../ui/hero-animation-container";
 import Image from "next/image";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../../utils/firebase/config";
+// import { useAuthState } from "react-firebase-hooks/auth";
+// import { auth } from "../../../utils/firebase/config";
 
 const Hero = () => {
-  const [user] = useAuthState(auth);
-  // const user = true; /* for preview mode only */
+  // const [user] = useAuthState(auth);
   return (
-    <section>
-      <div className={`flex flex-col -mt-8 overflow-hidden`}>
+    <section className="overflow-hidden">
+      <div className={`flex flex-col -mt-8 `}>
         <ContainerScroll
           titleComponent={
             <div className="-mt-14 sm:-mt-28 mx-auto max-w-[800px] text-center">
@@ -26,7 +25,7 @@ const Hero = () => {
                 content and quizzes.
                 <br /> Join us to revolutionize education together!
               </p>
-              <div className="flex flex-col items-center justify-center  space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+              <div className="flex flex-col items-center justify-center mb-14  space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                 <Link href={"/courses"} className={buttonVariants()}>
                   Get Started <span className="ml-2"> &rarr;</span>
                 </Link>
@@ -43,19 +42,11 @@ const Hero = () => {
           }
         >
           <Image
-            src={"/hero/img-hero-light.png"}
-            alt="hero"
-            height={720}
-            width={1400}
-            className="dark:hidden hidden sm:block mx-auto rounded-2xl object-cover h-full object-left-top"
-            draggable={false}
-          />
-          <Image
             src={"/hero/img-hero-dark.png"}
             alt="hero"
             height={720}
             width={1400}
-            className="hidden dark:block sm:block mx-auto rounded-2xl object-cover h-full object-left-top"
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
             draggable={false}
           />
         </ContainerScroll>

@@ -15,15 +15,12 @@ const page = () => {
   const iframes = [
     {
       title: "Create Account and enroll our courses",
-      link: <ContributeInstructions />,
     },
     {
       title: "How to visualise our courses",
-      link: <VisualizationInstructions />,
     },
     {
       title: "How to use our Chatbot",
-      link: <ChatbotInstructions />,
     },
     {
       title: "How to contribute to our project",

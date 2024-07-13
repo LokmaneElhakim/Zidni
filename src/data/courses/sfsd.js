@@ -23,7 +23,7 @@ import { VisualisationComponent } from "../../components/global/Visualisation/in
 import { Fragment } from "react";
 export const sfsd = {
   id: 23,
-  title: "File structure and data structure",
+  title: "File and data structure",
   description:
     "This course provides an in-depth exploration of file systems and data structures. You will learn about various types of data structures, including arrays, linked lists, stacks, queues, trees, and graphs. The course also covers file organization, storage methods, indexing, and hashing techniques, which are crucial for efficient data retrieval and storage management. By the end of the course, you will be adept at implementing and manipulating data structures to optimize performance and storage.",
   comingSoon: false,

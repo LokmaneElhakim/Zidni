@@ -69,12 +69,11 @@
 
 /* Customize the scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  /* Set the width of the scrollbar */
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #b1b1b2e6;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -11,9 +11,11 @@ export const bdd = {
   id: 25,
   title: "Databases",
   description:
-    "Master database fundamentals, including design, SQL, normalization, and optimization for efficient data management and retrieval.",
+"This course focuses on the principles and practices of database systems. You will learn about relational databases, SQL, normalization, and database design. The course also covers advanced topics such as transaction management, concurrency control, and distributed databases. By the end of the course, you will have a solid understanding of how to design, implement, and manage robust and efficient database systems that meet organizational needs.",
   comingSoon: false,
   isNew: true,
+  chaptersTitles:["Presentation of databases","Database design & Relational model","Constraints & Normalization","Relational algebra"],
+
   chapters: [
     {
       chapterId: 1,

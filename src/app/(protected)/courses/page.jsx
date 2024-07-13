@@ -15,7 +15,6 @@ import { doc, getDoc } from "firebase/firestore";
 import { updateProfile } from "firebase/auth";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../../../components/ui/bento-grid";
-import { AlignVerticalSpaceAround } from "lucide-react";
 const Courses = () => {
   const [user] = useAuthState(auth);
   // const user = true;
@@ -51,23 +50,24 @@ const Courses = () => {
                 together. Let's dive in!
               </p>
             </div>
-            <BentoGrid className="mt-7 mx-auto">
+            <BentoGrid className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto !h-fit">
               {courses.map((course, i) => (
                 <BentoGridItem
                   path={course.path}
                   key={i}
                   title={course.title}
                   description={course.description}
-                  icon={
-                    course.icon ?? (
-                      <AlignVerticalSpaceAround className="h-4 w-4 text-neutral-500" />
-                    )
+                  className={
+                    i === 3
+                      ? "lg:col-span-2 col-span-1"
+                      : "row-span-1 lg:row-span-3"
                   }
-                  className={i === 3 || i === 6 ? "md:col-span-2" : ""}
                   label={
                     (course.comingSoon && "Coming Soon") ||
                     (course.isNew && "New")
                   }
+                  comingSoon={course.comingSoon}
+                  chapters={course.chaptersTitles}
                 />
               ))}
             </BentoGrid>

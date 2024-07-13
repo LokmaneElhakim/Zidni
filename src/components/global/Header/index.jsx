@@ -103,53 +103,6 @@ const Header = () => {
         <div className="flex w-full items-center justify-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
           <form className="ml-auto flex-1 sm:flex-initial">
             <ComboboxDemo />
-            {/* {user ? (
-              <div className="relative">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <input
-                  list="courses"
-                  type="search"
-                  placeholder="Search for courses..."
-                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium  focus-visible:outline-black disabled:cursor-not-allowed disabled:opacity-50 pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
-                />
-                {
-                  // it's static just for the moment
-                }
-                <datalist id="courses">
-                  {[
-                    "sfsd",
-                    "algebra 1",
-                    "algebra 2",
-                    "analyse 1",
-                    "probability",
-                    "stats",
-                  ].map((option) => (
-                    <option
-                      value={option}
-                      onClick={() => {
-                        router.push(`/courses/${option}`);
-                      }}
-                    />
-                  ))}
-                </datalist>
-              </div>
-            ) : (
-              <div className="hidden sm:block">
-                <Link className={buttonVariants()} href={"/signin"}>
-                  Sign In
-                </Link>
-                <span
-                  className=" mx-2.5 h-6 w-px bg-gray-400"
-                  aria-hidden="true"
-                />
-                <Link
-                  className={buttonVariants({ variant: "outline" })}
-                  href={"/signup"}
-                >
-                  Get Started
-                </Link>
-              </div>
-            )} */}
           </form>
           <ThemeToggler />
           <div className="h-full m-0 p-0">

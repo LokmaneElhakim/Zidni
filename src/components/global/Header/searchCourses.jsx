@@ -20,30 +20,30 @@ import Link from "next/link";
 
 const frameworks = [
   {
-    value: "sfsd",
+    value: "File and folder structure",
     path: "/courses/sfsd/learn",
     label: "File and folder structure",
   },
 
   {
-    value: "bdd",
+    value: "Databases",
     path: "/courses/bdd/learn",
     label: "Databases",
   },
   {
-    value: "algebra",
+    value: "Algebra 3",
     path: "/courses/algebra/learn",
     label: "Algebra 3",
   },
 
   {
-    value: "thg",
+    value: "Graph theory ",
     // path: "/courses/thg/learn",
-    label: "Graph theory (coming soon)",
+    label: "Graph theory",
   },
   {
-    value: "archi",
-    label: "Data architecture (coming soon)",
+    value: "Data architecture ",
+    label: "Data architecture",
   },
 ];
 

@@ -7,10 +7,12 @@ export const thg = {
   id: 38,
   title: "Graph theory",
   description:
-    "Explore graph theory concepts, including vertices, edges, paths, cycles, and graph coloring, with applications in computer science and networks.",
+  "Explore the fascinating world of Graph Theory in this comprehensive course. You will learn about the fundamental concepts and structures of graphs, including paths, cycles, trees, and networks. The course covers graph algorithms such as shortest path, spanning tree, and network flow algorithms. Applications of graph theory in computer science, biology, social networks, and other fields will also be discussed. By the end of the course, you will be equipped with the knowledge to apply graph theory to solve complex problems.",
   comingSoon: false,
   isNew: true,
-  chapters: [
+    chaptersTitles:["Basic definitions","Graph Representations","Graph Algorithms","Applications of Graph Theory"],
+
+    chapters: [
     {
       chapterId: 1,
       title: "Basic Definitions",

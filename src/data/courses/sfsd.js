@@ -25,9 +25,15 @@ export const sfsd = {
   id: 23,
   title: "File structure and data structure",
   description:
-    "The File Structures and Data Structures module studies file access, data structures, and associated algorithms to efficiently manipulate massive data, optimizing transfers between central and external memory.",
+    "This course provides an in-depth exploration of file systems and data structures. You will learn about various types of data structures, including arrays, linked lists, stacks, queues, trees, and graphs. The course also covers file organization, storage methods, indexing, and hashing techniques, which are crucial for efficient data retrieval and storage management. By the end of the course, you will be adept at implementing and manipulating data structures to optimize performance and storage.",
   comingSoon: false,
   isNew: false,
+  chaptersTitles: [
+    "General information about files",
+    "Media concepts",
+    "Index structures",
+    "B-Trees",
+  ],
   chapters: [
     {
       chapterId: 1,

@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import Body from "./body";
-import { AnimatedTooltipPreview } from "../teamIcons";
 import Link from "next/link";
 import { buttonVariants } from "../../../ui/button";
 import { Input } from "../../../ui/input";
@@ -39,7 +38,7 @@ function BodyContainer({
         listQst={listQuestions}
         listRes={listResponses}
       />
-      {/* <div className="flex items-center bg-primary w-full h-1/6 p-1.5 space-x-2.5 rounded-b-lg">
+      <div className="flex items-center bg-primary w-full h-1/6 p-1.5 space-x-2.5 rounded-b-lg">
         <Input
           type="text"
           placeholder="Ask something ..."
@@ -56,7 +55,7 @@ function BodyContainer({
         >
           <SendHorizontal />
         </button>
-      </div> */}
+      </div>
     </div>
   );
 }

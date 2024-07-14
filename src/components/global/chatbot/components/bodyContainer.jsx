@@ -20,7 +20,6 @@ function BodyContainer({
   return (
     <div className=" rounded-lg flex justify-center items-center flex-col h-4/5 w-full border border-[#A3A3A3] shadow-lg">
       <div className="flex flex-col justify-center items-center w-full h-[20%] bg-slate-300 dark:bg-gray-800 rounded-lg font-bold text-2xl py-4 ">
-        <AnimatedTooltipPreview />
         <h2>Chatbot</h2>
         <span className="flex justify-center items-center h-5 text-center text-[14px]">
           For more information contact us
@@ -40,7 +39,7 @@ function BodyContainer({
         listQst={listQuestions}
         listRes={listResponses}
       />
-      <div className="flex items-center bg-primary w-full h-1/6 p-1.5 space-x-2.5 rounded-b-lg">
+      {/* <div className="flex items-center bg-primary w-full h-1/6 p-1.5 space-x-2.5 rounded-b-lg">
         <Input
           type="text"
           placeholder="Ask something ..."
@@ -57,7 +56,7 @@ function BodyContainer({
         >
           <SendHorizontal />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

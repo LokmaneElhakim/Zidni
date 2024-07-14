@@ -2,7 +2,7 @@ export const archi = {
   id: 38,
   title: "Data Architecture",
   description:
-    "In this comprehensive course on Data Architecture, you will learn how to design and manage the flow of data within an organization. The course covers essential concepts and advanced techniques for creating efficient, scalable, and secure data systems.",
+    "In this comprehensive course on Data Architecture, you will learn essential concepts and advanced techniques for creating efficient, scalable, and secure data systems.",
   comingSoon: true,
   isNew: false,
   chaptersTitles: [

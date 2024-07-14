@@ -22,9 +22,8 @@ import {
 import { cn } from "../../utils/cn";
 import { Button, buttonVariants } from "../../components/ui/button";
 import Link from "next/link";
-import { redirect } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import Joyride, { STATUS } from "react-joyride";
+import React, { useState } from "react";
+import Joyride from "react-joyride";
 import { VisualisationComponent } from "../../components/global/Visualisation";
 import { Info } from "lucide-react";
 
@@ -89,7 +88,7 @@ function App() {
         content: (
           <h2>you can expand this by clicking to learn about the chapter.</h2>
         ),
-        placement: "bottom",
+        placement: "left",
         target: "#step-4",
         title: "Chapter Content",
       },
@@ -101,7 +100,7 @@ function App() {
             (the click toggles the visualization).
           </h2>
         ),
-        placement: "bottom",
+        placement: "left",
         target: "#visualization",
         title: "Visualization",
       },
@@ -118,29 +117,31 @@ function App() {
       },
       {
         content: (
-          <h2>
-            Great job! You're ready to dive deeper into our courses, click on
-            the "Start Learning" button. Happy learning!
-          </h2>
+          <div>
+            <h2>
+              Great job! You're ready to dive deeper into our courses, click on
+              the "Start Learning" button. Happy learning!
+            </h2>
+            <Link
+              href={"/courses"}
+              className={cn(
+                "mt-6 mb-2 !w-full !opacity-95",
+                buttonVariants({ size: "lg" })
+              )}
+            >
+              Start learning
+            </Link>
+          </div>
         ),
-        placement: "right",
-        target: "#learn",
+        placement: "center",
+        target: "body",
         title: "Congrats",
       },
     ],
   });
 
   return (
-    <div
-      className="min-h-[90dvh] max-h-[91dvh] bg-muted/90"
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        padding: 10,
-        color: "white",
-      }}
-    >
+    <div className="min-h-[90dvh] max-h-[91dvh] bg-muted/90 rounded-lg opacity-70">
       <Joyride
         continuous
         callback={() => {}}
@@ -148,23 +149,27 @@ function App() {
         steps={steps}
         hideCloseButton
         scrollToFirstStep
-        showProgress
+        disableCloseOnEsc
+        disableOverlayClose
         styles={{
           options: {
-            arrowColor: "#e3ffeb",
-            backgroundColor: "#151515",
-            overlayColor: "rgba(55, 65, 81, 1)",
+            arrowColor: "white",
+            backgroundColor: "#0000ff73",
+            overlayColor: "#121212",
+            spotlightShadow: "#fff",
             primaryColor: "#2563ebe6",
-            textColor: "#ffe",
+            textColor: "white",
             zIndex: 1000,
+            border: 2,
+            borderRadius: 50,
           },
         }}
       />
-      <div className="min-h-fit !max-h-[90dvh] overflow-hidden -mt-8 sm:mt-0 --font-abz sticky w-full m-0 p-0">
+      <div className="min-h-fit !max-h-[90dvh] overflow-hidden -mt-5 sm:mt-0 --font-abz sticky w-full m-0 p-0">
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel defaultSize={35} className={"hidden sm:block"}>
             <>
-              <Card key={12} className="m-4 min-w-80 hidden sm:block">
+              <Card key={12} className="m-4 min-w-80 hidden sm:block ">
                 <div id="course-overview" style={{ marginBottom: "20px" }}>
                   <CardHeader>
                     <CardTitle>This is a demo page</CardTitle>
@@ -177,39 +182,32 @@ function App() {
                 </div>
                 <CardContent>
                   <div
-                    id="step-1"
                     className={
                       "flex-col justify-center items-center sm:flex mt-5 w-full"
                     }
                   >
-                    {chapters.map((chapter, idx) => (
-                      <button
-                        className={cn(
-                          "w-full my-1 text-left",
-                          buttonVariants({ variant: "outline" })
-                        )}
-                        key={idx}
-                      >
-                        {idx + 1}. {chapter}
-                      </button>
-                    ))}
+                    <div id="step-1">
+                      {chapters.map((chapter, idx) => (
+                        <button
+                          className={cn(
+                            "w-full my-1 text-left ",
+                            buttonVariants({ variant: "outline" })
+                          )}
+                          key={idx}
+                        >
+                          {idx + 1}. {chapter}
+                        </button>
+                      ))}
+                    </div>
                     <div>
                       <div id="step-2">
-                        <Button className={cn("my-2")}>Take quiz</Button>
-                        <Button className={cn("my-2 ml-3")} variant="secondary">
+                        <Button className={cn("my-2 ")}>Take quiz</Button>
+                        <Button
+                          className={cn("my-2 ml-3 ")}
+                          variant="secondary"
+                        >
                           Next course
                         </Button>
-                      </div>
-                      <div id="learn">
-                        <Link
-                          href={"/courses"}
-                          className={cn(
-                            "my-2 !w-full",
-                            buttonVariants({ size: "lg" })
-                          )}
-                        >
-                          Start learning
-                        </Link>
                       </div>
                     </div>
                   </div>
@@ -255,51 +253,20 @@ const Visualisation = ({}) => {
               <AccordionItem value={39}>
                 <div id="step-4">
                   <AccordionTrigger>
-                    <h3 className="font-bold mt-3">{"1) Introduction"}</h3>
+                    <h3 className="font-bold">{"1) Introduction"}</h3>
                   </AccordionTrigger>
-                  <AccordionContent>
-                    <p>
-                      Fully balanced search tree files have the following
-                      characteristics:
-                      <br />- Same block structures and same declarations
-                      <br />- Same search mechanisms (for a value and by range
-                      of values)
-                      <br />
-                      These trees are designed to optimize data retrieval and
-                      insertion operations.
-                    </p>
-                  </AccordionContent>
                 </div>
-              </AccordionItem>
-              <AccordionItem value={114}>
-                <AccordionTrigger>
-                  <h3 className="font-bold mt-3">{"2) Insertion Mechanism"}</h3>
-                </AccordionTrigger>
                 <AccordionContent>
-                  <ol type="I">
-                    <li>
-                      I. Search for x. If x already exists, go to IV (End).
-                      Otherwise, let P be the last node visited (it's a leaf)
-                      and go to II.
-                    </li>
-                    <li>
-                      II. If P is not full, insert x into P (by internal shifts)
-                      and go to IV (End).
-                    </li>
-                    <li>
-                      III. If P is full, split P into two nodes:
-                      <br />- Allocate a new node, Q.
-                      <br />- P will contain the first half, Q will contain the
-                      last half.
-                      <br />- Let m be the value of the middle separating the
-                      two halves.
-                      <br />
-                      <strong>Insert m into the parent of P...</strong>
-                      <br />- x ← m; P ← parent(P); If P == nil, allocate a new
-                      root and go to II.
-                    </li>
-                    <li>IV. End.</li>
-                  </ol>
+                  <p>
+                    Fully balanced search tree files have the following
+                    characteristics:
+                    <br />- Same block structures and same declarations
+                    <br />- Same search mechanisms (for a value and by range of
+                    values)
+                    <br />
+                    These trees are designed to optimize data retrieval and
+                    insertion operations.
+                  </p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value={356}>
@@ -332,11 +299,9 @@ const Visualisation = ({}) => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <div id="visualization">
+            <div id="visualization" className="mt-3">
               <VisualisationComponent
                 animationData={nodeDeletion}
-                height={500}
-                width={600}
                 title={"Deletion Mechanism in B-Trees"}
                 description={
                   "This animation covers the deletion process in B-Trees, demonstrating the steps involved in removing nodes and maintaining the tree structure."

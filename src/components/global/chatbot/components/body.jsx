@@ -25,7 +25,7 @@ function Body({ initQuestion, initResponse, isLoading, listQst, listRes }) {
   });
 
   return (
-    <div className="flex justify-start flex-col space-y-5 overflow-y-auto w-full h-4/6 p-1.5 rounded-b-lg bg-slate-100 dark:bg-gray-900">
+    <div className="flex justify-start flex-col space-y-5 overflow-y-auto w-full h-5/6 p-1.5 rounded-b-lg bg-slate-100 dark:bg-gray-900">
       {listInit.map((msg, index) => {
         return (
           <Fragment key={index}>
@@ -36,8 +36,8 @@ function Body({ initQuestion, initResponse, isLoading, listQst, listRes }) {
       })}
       {list.length === 0 && (
         <p className="flex justify-center items-center h-1/7 text-center text-[14px] text-[#A3A3A3]">
-          This AI chatbot will help you discover the functionalities of the
-          plateform and answer on you questions!
+          This AI chatbot will help you explore our platform's features,
+          deployment is pending. Thank you for your patience.
         </p>
       )}
       {list.map((msg, index) => (

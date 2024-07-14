@@ -1,22 +1,11 @@
 import ScrollToTop from "../components/global/ScrollToTop";
 import "../styles/index.css";
-import { Inter, Syne, ABeeZee } from "next/font/google";
+import { ABeeZee } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "../components/global/Header/index";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["700", "800"],
-  variable: "--font-syne",
-});
 
 // According to Google Fonts' official website, it's the best font for learning
 const abeezee = ABeeZee({

@@ -15,13 +15,13 @@ export default function Home() {
       <Hero />
       <Features />
       {/* <Video /> */}
-      <Testimonials
+      {/* <Testimonials
         items={quotes}
         speed="slower"
         pauseOnHover={true}
         type="testimonials"
         direction="right"
-      />
+      /> */}
       <AboutSection />
 
       <Testimonials

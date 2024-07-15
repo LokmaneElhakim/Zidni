@@ -1,11 +1,15 @@
+"use client";
 import React, { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import { Message } from "./message";
 import { cn } from "../../../utils/cn";
 import { buttonVariants } from "../../ui/button";
-import { SendHorizontal } from "lucide-react";
-import { Input } from "../../ui/input";
-
+import {
+  Accordion,
+  AccordionItem,
+  AccordionContent,
+  AccordionTrigger,
+} from "../../ui/accordion";
 const initialQuestions = [
   {
     id: 2,
@@ -54,7 +58,7 @@ const Chatbot = () => {
 
   useEffect(() => {
     if (state) {
-      setInitQuestion(["Welcome to Zidni! How can we assist you today?"]);
+      setInitQuestion(["Welcome to Zidni 👋", "How can we assist you today?"]);
       setInitResponse([""]);
     }
   }, [state]);
@@ -65,45 +69,6 @@ const Chatbot = () => {
 
   const onSendButton = () => {
     if (inputValue === "") return;
-    /* when the chatbot is available
-    
-    setListQst((prev) => [...prev, inputValue]);
-    setIsLoading(true);
-
-    const matchedQuestion = initialQuestions.find((question) =>
-      inputValue.toLowerCase().includes(question.question.toLowerCase())
-    );
-
-    if (matchedQuestion) {
-      const suggestion = `Did you mean: "${matchedQuestion.question}"?`;
-      setListRes((prev) => [...prev, suggestion]);
-      setIsLoading(false);
-    } else {
-      setTimeout(() => {
-        const botMessage = "Your question will be replied soon.";
-
-        let index = 0;
-        const interval = setInterval(() => {
-          if (index < botMessage.length) {
-            setListRes((prev) => {
-              const newResponses = [...prev];
-              newResponses[newResponses.length - 1] = botMessage.slice(
-                0,
-                index + 1
-              );
-              return newResponses;
-            });
-            index++;
-          } else {
-            clearInterval(interval);
-            setIsLoading(false);
-          }
-        }, 50);
-
-        setListRes((prev) => [...prev, ""]);
-      }, 1000);
-    }
-    */
     setInputValue("");
   };
 
@@ -151,15 +116,14 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-5 z-50 flex flex-col items-end space-y-2 h-[90%] max-w-[45vw] md:max-w-[40vw] min-w-[300px] justify-end">
+    <div className="fixed bottom-6 right-5 z-50 flex flex-col items-end space-y-2 h-[90%] max-w-[45vw] md:max-w-[45vw] lg:w-[30vw] min-w-[300px] justify-end">
       {state && (
         <div className="rounded-lg flex flex-col h-[80%] w-full border border-[#A3A3A3] shadow-lg">
           <div className="flex flex-col justify-center items-center w-full h-[20%] bg-slate-300 dark:bg-gray-800 rounded-lg font-bold text-2xl py-4 ">
-            <h2>Chatbot</h2>
-            <span className="flex justify-center items-center h-5 text-center text-[14px]">
-              For more information contact us
+            <h2 className="mt-1.5">Chatbot</h2>
+            <span className="mt-5 flex justify-center items-end h-5 text-center text-[14px]">
+              For more informations contact us at
             </span>
-
             <Link
               href={"mailto:contact.zidni@gmail.com"}
               className={cn(
@@ -202,53 +166,37 @@ const Chatbot = () => {
               ))}
               {isLoading && <Message isAns={true}>...</Message>}
             </div>
+            <p className="flex justify-center items-end align-bottom h-1/7 text-center text-[14px] text-[#A3A3A3]">
+              This AI chatbot will help you explore our platform's features,
+              deployment is pending. Thank you for your patience.
+            </p>
           </div>
-          <div className="flex items-center bg-primary w-full px-1 sm:p-0 ">
-            <Input
-              type="text"
-              placeholder="Ask something ..."
-              value={questionInput}
-              onChange={(e) => setQuestionInput(e.target.value)}
-            />
-            <button
-              onClick={onSendButton}
-              disabled={isLoading}
-              className="scale-130 p-2"
-            >
-              <SendHorizontal />
-            </button>
-          </div>
-          <div className="p-3 border-t border-gray-300 bg-gray-50 dark:bg-gray-800 h-[24%] overflow-y-auto sm:text-sm rounded-lg">
-            <span className="font-semibold text-sm">Suggested Questions:</span>
-            <div className="mt-2 space-y-1 max-h-[120px] overflow-y-auto">
-              {predefiedQst.map((question, index) => (
-                <div
-                  key={index}
-                  className="cursor-pointer text-blue-600 hover:underline text-sm"
-                  onClick={() => {
-                    setMessageInfo(false);
-                    handleQuestionClick(question.question);
-                  }}
-                >
-                  {question.question}
-                </div>
-              ))}
-            </div>
-          </div>
+
+          <Accordion
+            collapsible
+            className="p-3 border-t border-gray-300 bg-gray-50 dark:bg-gray-800 h-[24%] overflow-y-auto sm:text-sm rounded-lg"
+          >
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Suggested Questions</AccordionTrigger>
+              <AccordionContent className="mt-2 space-y-1 max-h-[120px] ">
+                {predefiedQst.map((question, index) => (
+                  <div
+                    key={index}
+                    className="cursor-pointer text-blue-600 hover:underline text-sm"
+                    onClick={() => {
+                      setMessageInfo(false);
+                      handleQuestionClick(question.question);
+                    }}
+                  >
+                    {question.question}
+                  </div>
+                ))}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       )}
       {renderOpenButton()}
-      <style>
-        {`
-          @keyframes blink {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; }
-          }
-          .animate-blink {
-            animation: blink 1.4s infinite both;
-          }
-        `}
-      </style>
     </div>
   );
 };

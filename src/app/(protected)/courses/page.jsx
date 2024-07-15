@@ -13,7 +13,7 @@ const Courses = () => {
         {
           <>
             <div className="text-center ml-4">
-              <h1 className="text-2xl sm:text-5xl mt-28">Hi there 👋,</h1>
+              <h1 className="text-2xl sm:text-5xl mt-28">Hi there 👋</h1>
               <p className="lg:text-lg text-base ml-2 mt-2 mb-5">
                 Glad to see you, excited to explore our new way of learning
                 together. Let's dive in!

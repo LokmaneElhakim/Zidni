@@ -6,7 +6,15 @@ import {
   AccordionTrigger,
   AccordionItem,
 } from "../../components/ui/accordion";
-
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+  SheetTitle,
+  S,
+} from "../../components/ui/sheet";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -25,7 +33,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Joyride from "react-joyride";
 import { VisualisationComponent } from "../../components/global/Visualisation";
-import { Info } from "lucide-react";
+import { ChevronRight, Info } from "lucide-react";
 
 const chapters = [
   "General information about files",
@@ -51,6 +59,19 @@ function App() {
         placement: "center",
         target: "body",
       },
+
+      {
+        content: (
+          <h2>
+            You can see the course overview , description and chapters by
+            clicking on this button.
+          </h2>
+        ),
+        placement: "bottom",
+        target: "#sheet-trigger",
+        title: "Course content",
+      },
+
       {
         content: (
           <h2>
@@ -107,8 +128,8 @@ function App() {
       {
         content: (
           <h2>
-            if you didn' understand the visualization you can send us a feedback
-            by clicking the button below.
+            if you didn't understand the visualization you can send us a
+            feedback by clicking the button below.
           </h2>
         ),
         placement: "top",
@@ -126,7 +147,7 @@ function App() {
               href={"/courses"}
               className={cn(
                 "mt-6 mb-2 !w-full !opacity-95",
-                buttonVariants({ size: "lg" })
+                buttonVariants({ size: "lg", variant: "ghost" })
               )}
             >
               Start learning
@@ -154,10 +175,10 @@ function App() {
         styles={{
           options: {
             arrowColor: "white",
-            backgroundColor: "#0000ff73",
+            backgroundColor: "#1188FF",
             overlayColor: "#121212",
             spotlightShadow: "#fff",
-            primaryColor: "#2563ebe6",
+            primaryColor: "#252525",
             textColor: "white",
             zIndex: 1000,
             border: 2,
@@ -165,14 +186,14 @@ function App() {
           },
         }}
       />
-      <div className="min-h-fit !max-h-[90dvh] overflow-hidden -mt-5 sm:mt-0 --font-abz sticky w-full m-0 p-0">
+      <div className="min-h-fit !max-h-[90dvh] overflow-hidden -mt-9 sm:mt-0 --font-abz sticky w-full m-0 p-0">
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel defaultSize={35} className={"hidden sm:block"}>
             <>
               <Card key={12} className="m-4 min-w-80 hidden sm:block ">
                 <div id="course-overview" style={{ marginBottom: "20px" }}>
                   <CardHeader>
-                    <CardTitle>This is a demo page</CardTitle>
+                    <CardTitle>File and data structure</CardTitle>
                     <CardDescription>
                       This page is a demo and not an actual course. As a result,
                       some functionalities may not work as expected. Enjoy
@@ -224,6 +245,63 @@ function App() {
             minSize={55}
             className="z-[40] !w-full !p-0 !m-0"
           >
+            <Sheet>
+              <SheetTrigger>
+                <button
+                  id="sheet-trigger"
+                  className={cn(
+                    "relative -left-3 top-8 bg-muted/100 p-2 !rounded-full block sm:hidden",
+                    buttonVariants()
+                  )}
+                >
+                  <ChevronRight />
+                </button>
+              </SheetTrigger>
+              <SheetContent
+                side="left"
+                className={
+                  "flex-col justify-center items-center sm:flex mt-5 w-full"
+                }
+              >
+                <SheetHeader>
+                  <SheetTitle>
+                    <span id="course-overview">File and Data structure</span>
+                  </SheetTitle>
+                  <SheetClose>
+                    <div id="step-1">
+                      {chapters.map((chapter, idx) => (
+                        <button
+                          onClick={() => {
+                            setIndex(idx + 1);
+                          }}
+                          className={cn(
+                            "w-full my-1 text-left",
+                            buttonVariants({ variant: "outline" })
+                          )}
+                          key={chapter.chapterId}
+                          type="submit"
+                        >
+                          {idx + 1}. {chapter.title}
+                        </button>
+                      ))}
+                    </div>
+                    <div id="step-2">
+                      <button className={cn("my-2", buttonVariants())}>
+                        Take quiz
+                      </button>
+                      <button
+                        className={cn(
+                          "my-2 ml-3",
+                          buttonVariants({ variant: "secondary" })
+                        )}
+                      >
+                        Next course
+                      </button>
+                    </div>
+                  </SheetClose>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
             <Visualisation />
           </ResizablePanel>
         </ResizablePanelGroup>
@@ -308,7 +386,7 @@ const Visualisation = ({}) => {
                 }
                 intro={true}
               />
-              <div id="hint" className="right-2 bottom-2 float-right">
+              <div id="hint" className="sm:right-2 sm:bottom-2 float-right">
                 <Info color="#ffbd03" />
               </div>
             </div>

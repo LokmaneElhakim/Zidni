@@ -34,6 +34,7 @@ import React, { useState } from "react";
 import Joyride from "react-joyride";
 import { VisualisationComponent } from "../../components/global/Visualisation";
 import { ChevronRight, Info } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const chapters = [
   "General information about files",
@@ -43,6 +44,7 @@ const chapters = [
 ];
 
 function App() {
+  const router = useRouter();
   const [{ run, steps }] = useState({
     run: true,
     steps: [
@@ -55,7 +57,9 @@ function App() {
             content and quizzes. Join us to revolutionize education together!
           </span>
         ),
-        locale: { skip: <p className="text-gray-500">Skip</p> },
+        locale: {
+          skip: <p className="text-gray-500">Skip</p>,
+        },
         placement: "center",
         target: "body",
       },
@@ -140,14 +144,17 @@ function App() {
         content: (
           <div>
             <h2>
-              Great job! You're ready to dive deeper into our courses, click on
-              the "Start Learning" button. Happy learning!
+              Great job! You're ready to dive deeper into our courses,you'll be
+              redirected to the courses page. Happy learning!
             </h2>
             <Link
               href={"/courses"}
               className={cn(
                 "mt-6 mb-2 !w-full !opacity-95",
-                buttonVariants({ size: "lg", variant: "ghost" })
+                buttonVariants({
+                  size: "lg",
+                  variant: "ghost",
+                })
               )}
             >
               Start learning
@@ -186,7 +193,12 @@ function App() {
           },
         }}
       />
-      <div className="min-h-fit !max-h-[90dvh] overflow-hidden -mt-9 sm:mt-0 --font-abz sticky w-full m-0 p-0">
+      <div
+        className="min-h-fit !max-h-[90dvh] overflow-hidden -mt-9 sm:mt-0 --font-abz sticky w-full m-0 p-0"
+        onClick={() => {
+          router.push("/courses");
+        }}
+      >
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel defaultSize={35} className={"hidden sm:block"}>
             <>

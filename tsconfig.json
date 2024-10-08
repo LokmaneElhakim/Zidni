@@ -23,8 +23,8 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/app/(protected)/courses/[courseId]/completed_course/page.jsx",
-    "src/app/about/page.jsx"
+    "src/app/(protected)/courses/[courseId]/completed_course/page.tsx",
+    "src/app/about/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

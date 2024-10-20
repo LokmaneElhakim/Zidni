@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import StartScreen from "./StartScreen";
 import Question from "./Question";
 import NextButton from "./NextButton";
@@ -7,7 +7,8 @@ import FinishScreen from "./FinishScreen";
 import Timer from "./Timer";
 import { Card, CardContent } from "../ui/card";
 import { quizzes } from "../../data/quiz/quizzes";
-
+import { Info } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 const SECS_PER_QUESTION = 30;
 
 const initialState = {
@@ -75,6 +76,7 @@ export default function App({ name }) {
     (prev, cur) => prev + cur.points,
     0
   );
+  const [showCard, setShowCard] = useState(false);
 
   useEffect(() => {
     function fetchQuestions() {
@@ -133,6 +135,23 @@ export default function App({ name }) {
           />
         )}
       </CardContent>
+      <Popover className="relative z-1000 ">
+        <PopoverTrigger
+          className={"relative !ml-[90%] !mr-4 sm:!mr-0 float-right sm:hidden "}
+          onClick={() => setShowCard((prev) => !prev)}
+        >
+          <Info color="#ffbd03" />
+        </PopoverTrigger>
+        {showCard && (
+          <PopoverContent
+            className={`transition-opacity duration-500 rounded-lg pt-5 pb-3 pl-5 bg-muted/100 ${
+              showCard ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <b>Double click on options to validate.</b>
+          </PopoverContent>
+        )}
+      </Popover>
     </Card>
   );
 }

@@ -12,10 +12,14 @@ export const algebra = {
   id: 11,
   title: "Algebra",
   description:
-  "In Algebra 3, you will dive into advanced algebraic concepts and techniques. The course covers polynomial, rational, exponential, and logarithmic functions, as well as sequences, series, and complex numbers. You will also explore advanced topics such as matrix theory, determinants, eigenvalues, and eigenvectors. This course is designed to enhance your problem-solving skills and mathematical reasoning, preparing you for higher-level mathematics and applications in various fields.",
+    "In Algebra 3, you will dive into advanced algebraic concepts and techniques. The course covers polynomial, rational, exponential, and logarithmic functions, as well as sequences, series, and complex numbers. You will also explore advanced topics such as matrix theory, determinants, eigenvalues, and eigenvectors. This course is designed to enhance your problem-solving skills and mathematical reasoning, preparing you for higher-level mathematics and applications in various fields.",
   comingSoon: false,
   isNew: true,
-    chaptersTitles:["Review of Algebra 2 Concepts","Matrix of a linear mapping","Reduction of Endomorphisms"],
+  chaptersTitles: [
+    "Review of Algebra 2 Concepts",
+    "Matrix of a linear mapping",
+    "Reduction of Endomorphisms",
+  ],
 
   chapters: [
     {

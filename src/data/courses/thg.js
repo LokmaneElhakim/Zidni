@@ -1,7 +1,6 @@
 import GraphInput from "../visualisation/thg/GraphInput";
 import Graphe from "../visualisation/thg/graphe";
 import React from "react";
-import { VisualisationComponent } from "../../components/global/Visualisation/index";
 export const thg = {
   id: 38,
   title: "Graph theory",

@@ -34,6 +34,7 @@ import {
 } from "../../../../../components/ui/sheet";
 import { ChevronRight } from "lucide-react";
 import Head from "next/head";
+import { VisualisationComponent } from "../../../../../components/global/Visualisation";
 const page = () => {
   const pathname = usePathname();
   const [index, setIndex] = React.useState(1);
@@ -217,6 +218,18 @@ const Visualisation = ({ courseSelected, index }) => {
                         )}
                       </AccordionContent>
                       {subChapter?.subChapterVisualisation}
+                      {/* {subChapter.subChapterVisualisation && (
+                        <VisualisationComponent
+                          intro={false}
+                          animationData={
+                            subChapter.subChapterVisualisation.animationData
+                          }
+                          title={subChapter?.subChapterVisualisation.title}
+                          description={
+                            subChapter?.subChapterVisualisation.description
+                          }
+                        />
+                      )} */}
                     </AccordionItem>
                   );
                 }

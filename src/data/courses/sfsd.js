@@ -1,24 +1,24 @@
-import RecordExample from "../../data/visualisation/sfsd/RecordExample";
-import * as ReturnToZero from "../../data/visualisation/sfsd/Return To Zero.json";
-import * as NoReturnToZero from "../../data/visualisation/sfsd/No Return To Zero.json";
-import * as PhaseEncoding from "../../data/visualisation/sfsd/Phase Encoding.json";
-import * as NRZNBloque from "../../data/visualisation/sfsd/FNRZ Non-Bloqué.json";
-import * as NRZBloque from "../../data/visualisation/sfsd/FNRZ Bloqué.json";
-import * as PENBloque from "../../data/visualisation/sfsd/PE Non-Bloqué.json";
-import * as PEBloque from "../../data/visualisation/sfsd/PE Bloqué.json";
-import * as FormEnrg from "../../data/visualisation/sfsd/Format D'enregistrement Physique.json";
-import * as FormEnrgFixedSizeNonBlocked from "../../data/visualisation/sfsd/Le format des enregistrements de taille fixe non bloqués.json";
-import * as FormEnrgFixedSizeBlocked from "../../data/visualisation/sfsd/Le format des enregistrements de taille fixe bloqués.json";
-import * as FormEnrgVarSizeNonBlocked from "../../data/visualisation/sfsd/Le format des enregistrements de taille variable non bloqués.json";
-import * as DiskOrganization from "../../data/visualisation/sfsd/disk organization.json";
-import * as treeCreation from "../../data/visualisation/sfsd/treeCreation.json";
-import * as nodeDeletion from "../../data/visualisation/sfsd/nodeDeletion.json";
-import TableSFSD from "../../data/visualisation/sfsd/TableSFSD";
-import * as storageUnits from "../../data/visualisation/sfsd/storageUnits.json";
-import * as creatingDanceTable from "../../data/visualisation/sfsd/CreatingIndexTable.json";
-import * as RepresentationsOfMultiValued from "../../data/visualisation/sfsd/RepresentationsOfMultiValued.json";
-import * as blockCirculation from "../../data/visualisation/sfsd/blockCirculation.json";
-import * as recordTypes from "../../data/visualisation/sfsd/recordTypes.json";
+import RecordExample from "../visualisation/sfsd/RecordExample";
+import * as ReturnToZero from "../visualisation/sfsd/Return To Zero.json";
+import * as NoReturnToZero from "../visualisation/sfsd/No Return To Zero.json";
+import * as PhaseEncoding from "../visualisation/sfsd/Phase Encoding.json";
+import * as NRZNBloque from "../visualisation/sfsd/FNRZ Non-Bloqué.json";
+import * as NRZBloque from "../visualisation/sfsd/FNRZ Bloqué.json";
+import * as PENBloque from "../visualisation/sfsd/PE Non-Bloqué.json";
+import * as PEBloque from "../visualisation/sfsd/PE Bloqué.json";
+import * as FormEnrg from "../visualisation/sfsd/Format D'enregistrement Physique.json";
+import * as FormEnrgFixedSizeNonBlocked from "../visualisation/sfsd/Le format des enregistrements de taille fixe non bloqués.json";
+import * as FormEnrgFixedSizeBlocked from "../visualisation/sfsd/Le format des enregistrements de taille fixe bloqués.json";
+import * as FormEnrgVarSizeNonBlocked from "../visualisation/sfsd/Le format des enregistrements de taille variable non bloqués.json";
+import * as DiskOrganization from "../visualisation/sfsd/disk organization.json";
+import * as treeCreation from "../visualisation/sfsd/treeCreation.json";
+import * as nodeDeletion from "../visualisation/sfsd/nodeDeletion.json";
+import TableSFSD from "../visualisation/sfsd/TableSFSD";
+import * as storageUnits from "../visualisation/sfsd/storageUnits.json";
+import * as creatingDanceTable from "../visualisation/sfsd/CreatingIndexTable.json";
+import * as RepresentationsOfMultiValued from "../visualisation/sfsd/RepresentationsOfMultiValued.json";
+import * as blockCirculation from "../visualisation/sfsd/blockCirculation.json";
+import * as recordTypes from "../visualisation/sfsd/recordTypes.json";
 import { VisualisationComponent } from "../../components/global/Visualisation/index";
 import { Fragment } from "react";
 export const sfsd = {
@@ -34,6 +34,7 @@ export const sfsd = {
     "Index structures",
     "B-Trees",
   ],
+  chapterReference: ["1", "2", "3", "4"],
   chapters: [
     {
       chapterId: 1,

@@ -26,7 +26,8 @@
     "src/app/(protected)/courses/[courseId]/completed_course/page.tsx",
     "src/app/about/page.tsx",
     "src/app/(protected)/courses/[courseId]/learn/page.jsx",
-    "src/data/courses.js"
+    "src/data/courses.js",
+    "src/app/docs/docsData.js"
   ],
   "exclude": ["node_modules"]
 }

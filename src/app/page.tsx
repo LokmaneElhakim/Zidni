@@ -25,10 +25,11 @@ export default function Home() {
       <AboutSection />
 
       <Testimonials
+        className={""}
         direction="left"
         speed="fast"
-        pauseOnHover={false}
         type="brand"
+        items={2}
       />
       <Contact />
       <Chatbot />
